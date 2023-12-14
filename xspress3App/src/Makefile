@@ -15,6 +15,7 @@ ifeq (Linux, $(OS_CLASS))
 endif
 
 DBD += xspress3Support.dbd
+DBD += xspressChannelMaskPlugin.dbd
 
 
 # The following are compiled and added to the support library
