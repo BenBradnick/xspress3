@@ -46,7 +46,7 @@ XspressChannelMaskPlugin::XspressChannelMaskPlugin(
     )
 {
     // Create the asyn parameters
-    createParam(NDPluginXspressMaskUseString, asynParamInt32, &NDPluginUseMask);
+    createParam(XspressChannelMaskPluginUseString, asynParamInt32, &NDPluginUseMask);
 }
 
 
