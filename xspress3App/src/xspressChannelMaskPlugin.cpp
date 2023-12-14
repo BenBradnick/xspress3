@@ -94,9 +94,9 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
     int param = pasynUser->reason;
 
     // Call the base class
-    status |= NDPluginDriver::writeInt32(pasynUser, value);
+    status = NDPluginDriver::writeInt32(pasynUser, value);
 
-    return status;
+    return (asynStatus) status;
 }
 
 
@@ -112,10 +112,17 @@ void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
 
 
 /** Configuration command */
-extern "C" int XspressChannelMaskConfigure(const char *portName, int queueSize, int blockingCallbacks,
-                 const char *NDArrayPort, int NDArrayAddr, 1,
-                 int maxBuffers, size_t maxMemory,
-                 int priority, int stackSize, int maxThreads)
+extern "C" int XspressChannelMaskConfigure(
+    const char *portName,
+    int queueSize,
+    int blockingCallbacks,
+    const char *NDArrayPort,
+    int NDArrayAddr,
+    int maxBuffers,
+    size_t maxMemory,
+    int priority,
+    int stackSize,
+    int maxThreads)
 {
     XspressChannelMaskPlugin *pPlugin = new XspressChannelMaskPlugin(
         portName,
