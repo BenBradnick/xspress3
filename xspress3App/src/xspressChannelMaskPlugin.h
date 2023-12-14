@@ -5,6 +5,9 @@
  * @date 2023-12-14
  */
 
+#ifndef XspressChannelMaskPlugin_H
+#define XspressChannelMaskPlugin_H
+
 #include "NDPluginDriver.h"
 
 
@@ -35,4 +38,6 @@ protected:
 private:
     void applyMask(NDArray *pArray);
 
-}
+};
+
+#endif // XspressChannelMaskPlugin_H
