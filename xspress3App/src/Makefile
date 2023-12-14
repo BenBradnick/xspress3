@@ -15,7 +15,7 @@ ifeq (Linux, $(OS_CLASS))
 endif
 
 DBD += xspress3Support.dbd
-DBD += xpsressChannelMaskPlugin.dbd
+DBD += xspressChannelMaskPlugin.dbd
 
 
 # The following are compiled and added to the support library
@@ -25,7 +25,7 @@ xspress3Epics_SRCS += xsp3Detector.cpp
 xspress3Epics_SRCS += xsp3Simulator.cpp
 xspress3Epics_SRCS += xsp3SimElement.cpp
 xspress3Epics_SRCS += xsp3TimeRegister.cpp
-xspress3Epics_SRCS += xpsressChannelMaskPlugin.cpp
+xspress3Epics_SRCS += xspressChannelMaskPlugin.cpp
 
 
 include $(ADCORE)/ADApp/commonLibraryMakefile
