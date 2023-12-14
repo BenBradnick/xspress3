@@ -39,7 +39,7 @@ XspressChannelMaskPlugin::XspressChannelMaskPlugin(
     int priority, int stackSize, int maxThreads)
     /* Invoke the base class constructor */
     : NDPluginDriver(portName, queueSize, blockingCallbacks,
-        NDArrayPort, NDArrayAddr, maxOverlays, maxBuffers, maxMemory,
+        NDArrayPort, NDArrayAddr, 1, maxBuffers, maxMemory,
         asynGenericPointerMask,
         asynGenericPointerMask,
         ASYN_MULTIDEVICE, 1, priority, stackSize, maxThreads
