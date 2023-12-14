@@ -7,9 +7,12 @@
 
 #include "xspressChannelMaskPlugin.h"
 
+#include <iocsh.h>
+
 #include <epicsExport.h>
 
 static const char *driverName="XspressChannelMaskPlugin";
+
 
 /** Constructor for XspressChannelMaskPlugin
   * \param[in] portName The name of the asyn port driver to be created.
@@ -44,6 +47,67 @@ XspressChannelMaskPlugin::XspressChannelMaskPlugin(
 {
     // Create the asyn parameters
     createParam(NDPluginXspressMaskUseString, asynParamInt32, &NDPluginUseMask);
+}
+
+
+/**
+ * @brief Callback function that is called by the NDArray driver with new NDArray data.
+ * 
+ * @param pArray New NDArray from the NDArray driver
+ */
+void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
+{
+    /* Call the base class method */
+    NDPluginDriver::beginProcessCallbacks(pArray);
+
+    // TODO: copy the array
+
+    // TODO: implement the callback to apply the mask
+
+    // TODO: call endProcessCallbacks properly
+    /** Method that is normally called at the end of the processCallbacks())
+     * method in derived classes.
+     * \param[in] pArray  The NDArray from the callback.
+     * \param[in] copyArray This flag should be true if pArray is the original array passed to processCallbacks().
+     *            It must be false if the derived class if pArray is a new NDArray that processCallbacks() created
+     * \param[in] readAttributes This flag must be true if the derived class has not yet called readAttributes() for pArray.
+     *
+     * This method does NDArray callbacks to downstream plugins if NDArrayCallbacks is true and SortMode is Unsorted.
+     * If SortMode is sorted it inserts the NDArray into the std::multilist for callbacks in SortThread().
+     * It keeps track of DisorderedArrays and DroppedOutputArrays.
+     * It caches the most recent NDArray in pArrays[0]. */
+    NDPluginDriver::endProcessCallbacks(pArray, true, true);
+}
+
+
+/**
+ * @brief Called when asyn clients call pasynInt32->write().
+ * 
+ * Overidden from the base class to set plugin parameters.
+ * 
+ * @param pasynUser pasynUser structure that encodes the reason and address.
+ * @param value Value to write
+ * @return asynStatus Whether write was successful or not
+ */
+asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 value) {
+    asynStatus status = asynSuccess;
+    int param = pasynUser->reason;
+
+    // Call the base class
+    status |= NDPluginDriver::writeInt32(pasynUser, value);
+
+    return status;
+}
+
+
+/**
+ * @brief Apply the channel mask based on the selected channels to mask out
+ * 
+ * @param pArray NDArray to apply mask to
+ */
+void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
+{
+    // TODO: implement function
 }
 
 
