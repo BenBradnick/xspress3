@@ -61,28 +61,32 @@ void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
     NDPluginDriver::beginProcessCallbacks(pArray);
 
     int apply;
-    bool originalArray = true;
     getIntegerParam(NDPluginUseMask, apply);
+
     if (apply == 1)
     {
-        // TODO: copy the array
+        printf("%s: applying mask\n", driverName);
+
+        this->unlock();
+
+        // Copy the array
+        NDArray *pArrayCopy = this->pNDArrayPool->copy(pArray);
+
         // TODO: implement the callback to apply the mask
         originalArray = false;
-    }
 
-    // TODO: call endProcessCallbacks properly
-    /** Method that is normally called at the end of the processCallbacks())
-     * method in derived classes.
-     * \param[in] pArray  The NDArray from the callback.
-     * \param[in] copyArray This flag should be true if pArray is the original array passed to processCallbacks().
-     *            It must be false if the derived class if pArray is a new NDArray that processCallbacks() created
-     * \param[in] readAttributes This flag must be true if the derived class has not yet called readAttributes() for pArray.
-     *
-     * This method does NDArray callbacks to downstream plugins if NDArrayCallbacks is true and SortMode is Unsorted.
-     * If SortMode is sorted it inserts the NDArray into the std::multilist for callbacks in SortThread().
-     * It keeps track of DisorderedArrays and DroppedOutputArrays.
-     * It caches the most recent NDArray in pArrays[0]. */
-    NDPluginDriver::endProcessCallbacks(pArray, originalArray, true);
+        this->lock();
+
+        // Publish the modified array
+        NDPluginDriver::endProcessCallbacks(pArrayCopy, false, true);
+
+    }
+    else
+    {
+        // No mask applied - publish original array
+        printf("%s: skipping mask\n", driverName);
+        NDPluginDriver::endProcessCallbacks(pArray, true, true);
+    }
 }
 
 
@@ -99,10 +103,10 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
     asynStatus status = asynSuccess;
     int param = pasynUser->reason;
 
-    // Check if it matches our parameters
+    // Check if one of our parameters
     if (param == NDPluginUseMask)
     {
-        status = (asynStatus) setIntegerParam(function, value);
+        status = (asynStatus) setIntegerParam(param, value);
         callParamCallbacks();
     }
     else
