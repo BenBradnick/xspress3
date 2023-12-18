@@ -60,9 +60,15 @@ void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
     /* Call the base class method */
     NDPluginDriver::beginProcessCallbacks(pArray);
 
-    // TODO: copy the array
-
-    // TODO: implement the callback to apply the mask
+    int apply;
+    bool originalArray = true;
+    getIntegerParam(NDPluginUseMask, apply);
+    if (apply == 1)
+    {
+        // TODO: copy the array
+        // TODO: implement the callback to apply the mask
+        originalArray = false;
+    }
 
     // TODO: call endProcessCallbacks properly
     /** Method that is normally called at the end of the processCallbacks())
@@ -76,7 +82,7 @@ void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
      * If SortMode is sorted it inserts the NDArray into the std::multilist for callbacks in SortThread().
      * It keeps track of DisorderedArrays and DroppedOutputArrays.
      * It caches the most recent NDArray in pArrays[0]. */
-    NDPluginDriver::endProcessCallbacks(pArray, true, true);
+    NDPluginDriver::endProcessCallbacks(pArray, originalArray, true);
 }
 
 
@@ -93,10 +99,19 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
     asynStatus status = asynSuccess;
     int param = pasynUser->reason;
 
-    // Call the base class
-    status = NDPluginDriver::writeInt32(pasynUser, value);
+    // Check if it matches our parameters
+    if (param == NDPluginUseMask)
+    {
+        status = (asynStatus) setIntegerParam(function, value);
+        callParamCallbacks();
+    }
+    else
+    {
+        // Call the base class
+        status = (asynStatus) NDPluginDriver::writeInt32(pasynUser, value);
+    }
 
-    return (asynStatus) status;
+    return status;
 }
 
 
