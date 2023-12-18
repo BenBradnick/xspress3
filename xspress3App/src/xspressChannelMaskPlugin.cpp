@@ -72,8 +72,8 @@ void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
         // Copy the array
         NDArray *pArrayCopy = this->pNDArrayPool->copy(pArray);
 
-        // TODO: implement the callback to apply the mask
-        originalArray = false;
+        // TODO: apply the channel mask based on selected user options
+        
 
         this->lock();
 
