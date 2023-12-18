@@ -61,7 +61,7 @@ void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
     NDPluginDriver::beginProcessCallbacks(pArray);
 
     int apply;
-    getIntegerParam(NDPluginUseMask, apply);
+    getIntegerParam(NDPluginUseMask, &apply);
 
     if (apply == 1)
     {
@@ -70,7 +70,7 @@ void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
         this->unlock();
 
         // Copy the array
-        NDArray *pArrayCopy = this->pNDArrayPool->copy(pArray);
+        NDArray *pArrayCopy = this->pNDArrayPool->copy(pArray, NULL, true);
 
         // TODO: apply the channel mask based on selected user options
         
