@@ -69,6 +69,9 @@ epicsEnvSet("CHAN",   "8")
 epicsEnvSet("CHM1",   "7")
 < ../common/DefineSCAROI.cmd
 
+#Sum across all channels
+< ../common/DefineALLCHAN.cmd
+
 ###############################
 
 dbLoadRecords("xspress3Deadtime_8Channel.template",   "P=$(PREFIX)")

@@ -872,7 +872,7 @@ menu {
 		width=55
 		height=25
 	}
-	display[1] {
+	display[0] {
 		label="MCA 1"
 		name="xspress3_mcarois.adl"
 		args="P=$(P), CHAN=1"
@@ -888,7 +888,7 @@ menu {
 		width=55
 		height=25
 	}
-	display[1] {
+	display[0] {
 		label="MCA 1"
 		name="xspress3_mcarois.adl"
 		args="P=$(P), CHAN=2"
@@ -904,7 +904,7 @@ menu {
 		width=55
 		height=25
 	}
-	display[1] {
+	display[0] {
 		label="MCA 1"
 		name="xspress3_mcarois.adl"
 		args="P=$(P), CHAN=3"
@@ -920,7 +920,7 @@ menu {
 		width=55
 		height=25
 	}
-	display[1] {
+	display[0] {
 		label="MCA 1"
 		name="xspress3_mcarois.adl"
 		args="P=$(P), CHAN=4"
@@ -936,12 +936,12 @@ menu {
 		width=125
 		height=25
 	}
-	display[1] {
+	display[0] {
 		label="Single MCA Plots [ME4]"
 		name="xspress3_4mcas.adl"
 		args="P=$(P), R=MCA"
 	}
-	display[2] {
+	display[0] {
 		label="Summed MCA Plots [ME4]"
 		name="xspress3_4mcas.adl"
 		args="P=$(P), R=MCASUM"
