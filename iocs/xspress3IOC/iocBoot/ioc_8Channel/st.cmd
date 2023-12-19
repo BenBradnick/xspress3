@@ -135,7 +135,7 @@ epicsEnvSet("CHM1",   "7")
 < ../common/SetChannelValues.cmd
 
 # Set of plugins for summing across selected channels
-< ../common/SetAllChannelValues.cmd
+< ../common/SetChannelSumValues.cmd
 
 ###############################
 
