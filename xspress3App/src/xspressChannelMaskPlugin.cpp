@@ -160,34 +160,35 @@ extern "C" int XspressChannelMaskConfigure(
     return pPlugin->start();
 }
 
-/* EPICS iocsh shell commands */
-static const iocshArg initArg0 = { "portName", iocshArgString };
-static const iocshArg initArg1 = { "queue size", iocshArgInt };
-static const iocshArg initArg2 = { "blocking callbacks", iocshArgInt };
-static const iocshArg initArg3 = { "NDArrayPort", iocshArgString };
-static const iocshArg initArg4 = { "NDArrayAddr", iocshArgInt };
-static const iocshArg initArg5 = { "maxBuffers", iocshArgInt };
-static const iocshArg initArg6 = { "maxMemory", iocshArgInt };
-static const iocshArg initArg7 = { "priority", iocshArgInt };
-static const iocshArg initArg8 = { "stackSize", iocshArgInt };
-static const iocshArg initArg9 = { "maxThreads", iocshArgInt };
-static const iocshArg * const initArgs[] = {
-    &initArg0,
-    &initArg1,
-    &initArg2,
-    &initArg3,
-    &initArg4,
-    &initArg5,
-    &initArg6,
-    &initArg7,
-    &initArg8,
-    &initArg9
+/* EPICS iocsh shell register commands */
+
+static const iocshArg maskConfigArg0 = { "portName", iocshArgString };
+static const iocshArg maskConfigArg1 = { "queue size", iocshArgInt };
+static const iocshArg maskConfigArg2 = { "blocking callbacks", iocshArgInt };
+static const iocshArg maskConfigArg3 = { "NDArrayPort", iocshArgString };
+static const iocshArg maskConfigArg4 = { "NDArrayAddr", iocshArgInt };
+static const iocshArg maskConfigArg5 = { "maxBuffers", iocshArgInt };
+static const iocshArg maskConfigArg6 = { "maxMemory", iocshArgInt };
+static const iocshArg maskConfigArg7 = { "priority", iocshArgInt };
+static const iocshArg maskConfigArg8 = { "stackSize", iocshArgInt };
+static const iocshArg maskConfigArg9 = { "maxThreads", iocshArgInt };
+static const iocshArg * const maskConfigArgs[] = {
+    &maskConfigArg0,
+    &maskConfigArg1,
+    &maskConfigArg2,
+    &maskConfigArg3,
+    &maskConfigArg4,
+    &maskConfigArg5,
+    &maskConfigArg6,
+    &maskConfigArg7,
+    &maskConfigArg8,
+    &maskConfigArg9
 };
 
-static const iocshFuncDef initFuncDef = {
+static const iocshFuncDef channelMaskDefinition = {
     "XspressChannelMaskConfigure",
     10,
-    initArgs
+    maskConfigArgs
 };
 
 static void initCallFunc(const iocshArgBuf *args)
@@ -208,9 +209,6 @@ static void initCallFunc(const iocshArgBuf *args)
 
 extern "C" void XspressChannelMaskRegister(void)
 {
-    iocshRegister(&initFuncDef, initCallFunc);
-}
-
-extern "C" {
+    iocshRegister(&channelMaskDefinition, initCallFunc);
     epicsExportRegistrar(XspressChannelMaskRegister);
 }

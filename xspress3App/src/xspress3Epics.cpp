@@ -2131,18 +2131,20 @@ extern "C" {
   static const iocshArg xspress3ConfigArg9 = {"Debug", iocshArgInt};
   static const iocshArg xspress3ConfigArg10 = {"Sim Test", iocshArgInt};
   static const iocshArg xspress3ConfigArg11 = {"Circular Buffer", iocshArgInt};
-  static const iocshArg * const xspress3ConfigArgs[] =  {&xspress3ConfigArg0,
-							 &xspress3ConfigArg1,
-							 &xspress3ConfigArg2,
-							 &xspress3ConfigArg3,
-							 &xspress3ConfigArg4,
-							 &xspress3ConfigArg5,
-							 &xspress3ConfigArg6,
-							 &xspress3ConfigArg7,
-							 &xspress3ConfigArg8,
-							 &xspress3ConfigArg9,
-							 &xspress3ConfigArg10,
-               				 &xspress3ConfigArg11};
+  static const iocshArg * const xspress3ConfigArgs[] =  {
+    &xspress3ConfigArg0,
+    &xspress3ConfigArg1,
+    &xspress3ConfigArg2,
+    &xspress3ConfigArg3,
+    &xspress3ConfigArg4,
+    &xspress3ConfigArg5,
+    &xspress3ConfigArg6,
+    &xspress3ConfigArg7,
+    &xspress3ConfigArg8,
+    &xspress3ConfigArg9,
+    &xspress3ConfigArg10,
+    &xspress3ConfigArg11
+  };
 
 
   static const iocshFuncDef configXspress3 = {"xspress3Config", 12, xspress3ConfigArgs};
