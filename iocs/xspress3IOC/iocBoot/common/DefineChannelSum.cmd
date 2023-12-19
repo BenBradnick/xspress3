@@ -2,6 +2,10 @@
 epicsEnvSet("CHAN",   "ALL")
 epicsEnvSet("CHM1",   "ALL")
 
+# Channel mask plugin
+XspressChannelMaskConfigure("CHANMASK", "$(QSIZE)", 0, "XSP3", 0, 0, 0, 0, 0, 1)
+dbLoadRecords("xspress3ChannelMask.template", "P=$(PREFIX), R=det1:MASK")
+
 # setup SCA, ROIs, etc for all channels
 dbLoadRecords("xspress3_AttrReset.template", "P=$(PREFIX),R=det1:,CHAN=$(CHAN)")
 

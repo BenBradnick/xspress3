@@ -23,6 +23,7 @@ DB += xspress3Deadtime_14Channel.template
 DB += xspress3Deadtime_16Channel.template
 DB += xspress3Deadtime_4Channel.template
 DB += xspress3Deadtime_8Channel.template
+DB += xspress3ChannelMask.template
 
 include $(TOP)/configure/RULES
 #----------------------------------------

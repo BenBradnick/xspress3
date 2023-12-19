@@ -1,0 +1,27 @@
+#######################################################
+# Channel mask plugin template
+# Ben Bradnick
+# December 2023
+#
+# This template is used with the Channel Mask plugin to control
+# which channels are masked out (set to zero).
+#
+# Macros:
+# % macro,  P,           Device prefix
+# % macro,  R,           Device suffix
+# % macro,  PORT,        Asyn port name
+# % macro,  ADDR,        Asyn address (set to zero)
+# % macro,  TIMEOUT,     Asyn timeout
+#
+#######################################################
+
+include "NDPluginBase.template"
+
+record(bo, "$(P)$(R):USE")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))USE")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+   field(VAL,  "0")
+}

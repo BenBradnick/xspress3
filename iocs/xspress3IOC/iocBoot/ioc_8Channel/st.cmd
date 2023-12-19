@@ -69,8 +69,8 @@ epicsEnvSet("CHAN",   "8")
 epicsEnvSet("CHM1",   "7")
 < ../common/DefineSCAROI.cmd
 
-#Sum across all channels
-< ../common/DefineALLCHAN.cmd
+# Set of plugins for summing across selected channels
+< ../common/DefineChannelSum.cmd
 
 ###############################
 
@@ -133,6 +133,9 @@ epicsEnvSet("CHM1",   "6")
 epicsEnvSet("CHAN",   "8")
 epicsEnvSet("CHM1",   "7")
 < ../common/SetChannelValues.cmd
+
+# Set of plugins for summing across selected channels
+< ../common/SetAllChannelValues.cmd
 
 ###############################
 

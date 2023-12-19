@@ -106,6 +106,7 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
     // Check if one of our parameters
     if (param == NDPluginUseMask)
     {
+        printf("%s: use mask = %d\n", driverName, value);
         status = (asynStatus) setIntegerParam(param, value);
         callParamCallbacks();
     }
@@ -161,7 +162,7 @@ extern "C" int XspressChannelMaskConfigure(
 
 /* EPICS iocsh shell commands */
 static const iocshArg initArg0 = { "portName", iocshArgString };
-static const iocshArg initArg1 = { "frame queue size", iocshArgInt };
+static const iocshArg initArg1 = { "queue size", iocshArgInt };
 static const iocshArg initArg2 = { "blocking callbacks", iocshArgInt };
 static const iocshArg initArg3 = { "NDArrayPort", iocshArgString };
 static const iocshArg initArg4 = { "NDArrayAddr", iocshArgInt };
