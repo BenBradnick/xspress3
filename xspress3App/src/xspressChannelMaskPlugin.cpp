@@ -131,84 +131,89 @@ void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
 }
 
 
-/** Configuration command */
-extern "C" int XspressChannelMaskConfigure(
-    const char *portName,
-    int queueSize,
-    int blockingCallbacks,
-    const char *NDArrayPort,
-    int NDArrayAddr,
-    int maxBuffers,
-    size_t maxMemory,
-    int priority,
-    int stackSize,
-    int maxThreads)
-{
-    XspressChannelMaskPlugin *pPlugin = new XspressChannelMaskPlugin(
-        portName,
-        queueSize,
-        blockingCallbacks,
-        NDArrayPort,
-        NDArrayAddr,
-        maxBuffers,
-        maxMemory,
-        priority,
-        stackSize,
-        maxThreads
-    );
+extern "C" {
 
-    return pPlugin->start();
-}
+    /** Configuration command */
+    int XspressChannelMaskConfigure(
+        const char *portName,
+        int queueSize,
+        int blockingCallbacks,
+        const char *NDArrayPort,
+        int NDArrayAddr,
+        int maxBuffers,
+        size_t maxMemory,
+        int priority,
+        int stackSize,
+        int maxThreads)
+    {
+        XspressChannelMaskPlugin *pPlugin = new XspressChannelMaskPlugin(
+            portName,
+            queueSize,
+            blockingCallbacks,
+            NDArrayPort,
+            NDArrayAddr,
+            maxBuffers,
+            maxMemory,
+            priority,
+            stackSize,
+            maxThreads
+        );
 
-/* EPICS iocsh shell register commands */
+        return pPlugin->start();
+    }
 
-static const iocshArg maskConfigArg0 = { "portName", iocshArgString };
-static const iocshArg maskConfigArg1 = { "queue size", iocshArgInt };
-static const iocshArg maskConfigArg2 = { "blocking callbacks", iocshArgInt };
-static const iocshArg maskConfigArg3 = { "NDArrayPort", iocshArgString };
-static const iocshArg maskConfigArg4 = { "NDArrayAddr", iocshArgInt };
-static const iocshArg maskConfigArg5 = { "maxBuffers", iocshArgInt };
-static const iocshArg maskConfigArg6 = { "maxMemory", iocshArgInt };
-static const iocshArg maskConfigArg7 = { "priority", iocshArgInt };
-static const iocshArg maskConfigArg8 = { "stackSize", iocshArgInt };
-static const iocshArg maskConfigArg9 = { "maxThreads", iocshArgInt };
-static const iocshArg * const maskConfigArgs[] = {
-    &maskConfigArg0,
-    &maskConfigArg1,
-    &maskConfigArg2,
-    &maskConfigArg3,
-    &maskConfigArg4,
-    &maskConfigArg5,
-    &maskConfigArg6,
-    &maskConfigArg7,
-    &maskConfigArg8,
-    &maskConfigArg9
-};
+    /* EPICS iocsh shell register commands */
 
-static const iocshFuncDef channelMaskDefinition = {
-    "XspressChannelMaskConfigure",
-    10,
-    maskConfigArgs
-};
+    static const iocshArg maskConfigArg0 = { "portName", iocshArgString };
+    static const iocshArg maskConfigArg1 = { "queue size", iocshArgInt };
+    static const iocshArg maskConfigArg2 = { "blocking callbacks", iocshArgInt };
+    static const iocshArg maskConfigArg3 = { "NDArrayPort", iocshArgString };
+    static const iocshArg maskConfigArg4 = { "NDArrayAddr", iocshArgInt };
+    static const iocshArg maskConfigArg5 = { "maxBuffers", iocshArgInt };
+    static const iocshArg maskConfigArg6 = { "maxMemory", iocshArgInt };
+    static const iocshArg maskConfigArg7 = { "priority", iocshArgInt };
+    static const iocshArg maskConfigArg8 = { "stackSize", iocshArgInt };
+    static const iocshArg maskConfigArg9 = { "maxThreads", iocshArgInt };
+    static const iocshArg * const maskConfigArgs[] = {
+        &maskConfigArg0,
+        &maskConfigArg1,
+        &maskConfigArg2,
+        &maskConfigArg3,
+        &maskConfigArg4,
+        &maskConfigArg5,
+        &maskConfigArg6,
+        &maskConfigArg7,
+        &maskConfigArg8,
+        &maskConfigArg9
+    };
 
-static void initCallFunc(const iocshArgBuf *args)
-{
-    XspressChannelMaskConfigure(
-        args[0].sval,
-        args[1].ival,
-        args[2].ival,
-        args[3].sval,
-        args[4].ival,
-        args[5].ival,
-        args[6].ival,
-        args[7].ival,
-        args[8].ival,
-        args[9].ival
-    );
-}
+    static const iocshFuncDef channelMaskDefinition = {
+        "XspressChannelMaskConfigure",
+        10,
+        maskConfigArgs
+    };
 
-extern "C" void XspressChannelMaskRegister(void)
-{
-    iocshRegister(&channelMaskDefinition, initCallFunc);
+    static void initCallFunc(const iocshArgBuf *args)
+    {
+        XspressChannelMaskConfigure(
+            args[0].sval,
+            args[1].ival,
+            args[2].ival,
+            args[3].sval,
+            args[4].ival,
+            args[5].ival,
+            args[6].ival,
+            args[7].ival,
+            args[8].ival,
+            args[9].ival
+        );
+    }
+
+    static void XspressChannelMaskRegister(void)
+    {
+        iocshRegister(&channelMaskDefinition, initCallFunc);
+    }
+
     epicsExportRegistrar(XspressChannelMaskRegister);
+
 }

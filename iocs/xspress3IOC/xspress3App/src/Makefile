@@ -23,6 +23,7 @@ endif
 DBD += $(PROD_NAME).dbd
 
 $(PROD_NAME)_DBD += xspress3Support.dbd
+$(PROD_NAME)_DBD += xspressChannelMaskPlugin.dbd
 $(PROD_NAME)_SRCS += $(PROD_NAME)_registerRecordDeviceDriver.cpp $(PROD_NAME)Main.cpp
 #$(PROD_NAME)_LIBS += spectraPlugins
 $(PROD_NAME)_LIBS += xspress3Epics
