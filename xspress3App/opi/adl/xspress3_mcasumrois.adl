@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=685
-		y=37
+		x=264
+		y=107
 		width=1000
-		height=800
+		height=850
 	}
 	clr=1
 	bclr=1
@@ -221,7 +221,7 @@ text {
 		height=20
 	}
 	control {
-		chan="$(P):det1:MASK:USE"
+		chan="$(P):det1:MASK:CH1:ENABLE"
 		clr=14
 		bclr=3
 	}
@@ -235,7 +235,7 @@ text {
 		height=17
 	}
 	monitor {
-		chan="$(P):det1:MASK:USE_RBV"
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
 		clr=54
 		bclr=0
 	}
@@ -256,53 +256,6 @@ text {
 	}
 	textix="1"
 	align="horiz. right"
-}
-"choice button" {
-	object {
-		x=715
-		y=335
-		width=100
-		height=20
-	}
-	control {
-		chan="$(P):det1:MASKSUM:USE"
-		clr=14
-		bclr=3
-	}
-	stacking="column"
-}
-"text update" {
-	object {
-		x=825
-		y=335
-		width=70
-		height=20
-	}
-	monitor {
-		chan="$(P):det1:MASKSUM:USE_RBV"
-		clr=54
-		bclr=0
-	}
-	align="horiz. right"
-	format="string"
-	limits {
-	}
-}
-"related display" {
-	object {
-		x=910
-		y=335
-		width=70
-		height=20
-	}
-	display[0] {
-		label="Plugin base"
-		name="NDPluginBase.adl"
-		args="P=$(P):,R=det1:MASKSUM"
-	}
-	clr=14
-	bclr=55
-	label="-Plugin"
 }
 text {
 	object {
@@ -327,4 +280,1426 @@ text {
 		clr=14
 	}
 	textix="Apply channel masks"
+}
+composite {
+	object {
+		x=715
+		y=335
+		width=265
+		height=20
+	}
+	"composite name"=""
+	children {
+		"choice button" {
+			object {
+				x=715
+				y=335
+				width=100
+				height=20
+			}
+			control {
+				chan="$(P):det1:MASKSUM:USE"
+				clr=14
+				bclr=3
+			}
+			stacking="column"
+		}
+		"text update" {
+			object {
+				x=825
+				y=335
+				width=70
+				height=20
+			}
+			monitor {
+				chan="$(P):det1:MASKSUM:USE_RBV"
+				clr=54
+				bclr=0
+			}
+			align="horiz. right"
+			format="string"
+			limits {
+			}
+		}
+		"related display" {
+			object {
+				x=910
+				y=335
+				width=70
+				height=20
+			}
+			display[0] {
+				label="Plugin base"
+				name="NDPluginBase.adl"
+				args="P=$(P):,R=det1:MASKSUM"
+			}
+			clr=14
+			bclr=55
+			label="-Plugin"
+		}
+	}
+}
+"text update" {
+	object {
+		x=144
+		y=646
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH2:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=36
+		y=645
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH2:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=10
+		y=648
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. right"
+}
+text {
+	object {
+		x=10
+		y=673
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="3"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=36
+		y=670
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH3:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=144
+		y=671
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH3:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=144
+		y=696
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH4:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=36
+		y=695
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH4:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=10
+		y=698
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="4"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=36
+		y=720
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH5:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=144
+		y=721
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH5:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+text {
+	object {
+		x=10
+		y=723
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="5"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=144
+		y=746
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH6:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=36
+		y=745
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH6:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=10
+		y=748
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="6"
+	align="horiz. right"
+}
+text {
+	object {
+		x=10
+		y=773
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="7"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=36
+		y=770
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH7:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=144
+		y=771
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH7:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=144
+		y=796
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH8:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=36
+		y=795
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH8:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=10
+		y=798
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="8"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=266
+		y=620
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH9:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=374
+		y=621
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH9:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+text {
+	object {
+		x=240
+		y=623
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="9"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=374
+		y=646
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH10:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=266
+		y=645
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH10:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=240
+		y=648
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="10"
+	align="horiz. right"
+}
+text {
+	object {
+		x=240
+		y=673
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=266
+		y=670
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=374
+		y=671
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=374
+		y=696
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=266
+		y=695
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=240
+		y=698
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=266
+		y=720
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=374
+		y=721
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+text {
+	object {
+		x=240
+		y=723
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=374
+		y=746
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=266
+		y=745
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=240
+		y=748
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+text {
+	object {
+		x=240
+		y=773
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=266
+		y=770
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=374
+		y=771
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=374
+		y=796
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=266
+		y=795
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=240
+		y=798
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=496
+		y=620
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=604
+		y=621
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+text {
+	object {
+		x=470
+		y=623
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=604
+		y=646
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=496
+		y=645
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=470
+		y=648
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+text {
+	object {
+		x=470
+		y=673
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=496
+		y=670
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=604
+		y=671
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=604
+		y=696
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=496
+		y=695
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=470
+		y=698
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=496
+		y=720
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=604
+		y=721
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+text {
+	object {
+		x=470
+		y=723
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=604
+		y=746
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=496
+		y=745
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=470
+		y=748
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+text {
+	object {
+		x=470
+		y=773
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=496
+		y=770
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=604
+		y=771
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=604
+		y=796
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=496
+		y=795
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=470
+		y=798
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=726
+		y=620
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=834
+		y=621
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+text {
+	object {
+		x=700
+		y=623
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=834
+		y=646
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=726
+		y=645
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=700
+		y=648
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+text {
+	object {
+		x=700
+		y=673
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=726
+		y=670
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=834
+		y=671
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=834
+		y=696
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=726
+		y=695
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=700
+		y=698
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=726
+		y=720
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=834
+		y=721
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+text {
+	object {
+		x=700
+		y=723
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"text update" {
+	object {
+		x=834
+		y=746
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=726
+		y=745
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=700
+		y=748
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+text {
+	object {
+		x=700
+		y=773
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=726
+		y=770
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=834
+		y=771
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=834
+		y=796
+		width=70
+		height=17
+	}
+	monitor {
+		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"choice button" {
+	object {
+		x=726
+		y=795
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=700
+		y=798
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
 }
