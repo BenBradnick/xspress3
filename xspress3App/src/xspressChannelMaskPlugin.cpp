@@ -145,9 +145,9 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
     }
 
     // Call the base driver if we haven't handled it
-    if (pluginParam == false) status = (asynStatus)
+    if (pluginParam == false)
     {
-        NDPluginDriver::writeInt32(pasynUser, value);
+        status = (asynStatus) NDPluginDriver::writeInt32(pasynUser, value);
     }
 
     return status;
