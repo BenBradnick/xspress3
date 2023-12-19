@@ -184,7 +184,11 @@ static const iocshArg * const initArgs[] = {
     &initArg9
 };
 
-static const iocshFuncDef initFuncDef = {"NDPluginXspressChannel", 10, initArgs};
+static const iocshFuncDef initFuncDef = {
+    "XspressChannelMaskConfigure",
+    10,
+    initArgs
+};
 
 static void initCallFunc(const iocshArgBuf *args)
 {
@@ -210,4 +214,3 @@ extern "C" void XspressChannelMaskRegister(void)
 extern "C" {
     epicsExportRegistrar(XspressChannelMaskRegister);
 }
-

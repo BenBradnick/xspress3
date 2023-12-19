@@ -7,11 +7,12 @@
 # which channels are masked out (set to zero).
 #
 # Macros:
-# % macro,  P,           Device prefix
-# % macro,  R,           Device suffix
-# % macro,  PORT,        Asyn port name
-# % macro,  ADDR,        Asyn address (set to zero)
-# % macro,  TIMEOUT,     Asyn timeout
+# % macro,  P,            Device prefix
+# % macro,  R,            Device suffix
+# % macro,  PORT,         Asyn port name
+# % macro,  ADDR,         Asyn address (set to zero)
+# % macro,  NDARRAY_PORT  Asyn port of upstream plugin/driver
+# % macro,  TIMEOUT,      Asyn timeout
 #
 #######################################################
 
