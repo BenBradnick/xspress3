@@ -53,6 +53,7 @@ XspressChannelMaskPlugin::XspressChannelMaskPlugin(
         ASYN_MULTIDEVICE, 1, priority, stackSize, maxThreads
     )
 {
+
     // Create the asyn parameters
     createParam(XspressChannelMaskPluginUseString, asynParamInt32, &NDPluginUseMask);
 
@@ -121,16 +122,32 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
     int param = pasynUser->reason;
 
     // Check if one of our parameters
+    bool pluginParam = false;
     if (param == NDPluginUseMask)
     {
+        pluginParam = true;
         printf("%s: use mask = %d\n", driverName, value);
         status = (asynStatus) setIntegerParam(param, value);
         callParamCallbacks();
     }
     else
     {
-        // Call the base class
-        status = (asynStatus) NDPluginDriver::writeInt32(pasynUser, value);
+        for (int channel = 0; channel < enabledChannels.size(); channel++)
+        {
+            if (param == enabledChannels[channel])
+            {
+                pluginParam = true;
+                printf("%s: channel %d enable: %d\n", driverName, channel, value);
+                status = (asynStatus) setIntegerParam(param, value);
+                callParamCallbacks();
+            }
+        }
+    }
+
+    // Call the base driver if we haven't handled it
+    if (pluginParam == false) status = (asynStatus)
+    {
+        NDPluginDriver::writeInt32(pasynUser, value);
     }
 
     return status;
