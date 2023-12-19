@@ -11,7 +11,7 @@
 #include "NDPluginDriver.h"
 
 
-#define XspressChannelMaskPluginUseString "USE"  // (asynInt32,   r/w) String for enabling mask
+#define XspressChannelMaskPluginUseString  "USE"         // (asynInt32,   r/w) String for enabling mask
 
 /**
  * @brief AreaDetector plugin to mask out specific Xspress channels
@@ -21,10 +21,17 @@ class XspressChannelMaskPlugin : public NDPluginDriver {
 
 public:
     XspressChannelMaskPlugin(
-        const char *portName, int queueSize, int blockingCallbacks,
-        const char *NDArrayPort, int NDArrayAddr,
-        int maxBuffers, size_t maxMemory,
-        int priority, int stackSize, int maxThreads
+        const char *portName,
+        int numChannels,
+        int queueSize,
+        int blockingCallbacks,
+        const char *NDArrayPort,
+        int NDArrayAddr,
+        int maxBuffers,
+        size_t maxMemory,
+        int priority,
+        int stackSize,
+        int maxThreads
     );
 
     ~XspressChannelMaskPlugin() {};
@@ -34,6 +41,7 @@ public:
 
 protected:
     int NDPluginUseMask; // Whether to use the mask
+    std::vector<unsigned int> enabledChannels; // Vector of enabled channels
 
 private:
     void applyMask(NDArray *pArray);

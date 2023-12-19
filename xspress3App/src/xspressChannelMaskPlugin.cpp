@@ -33,10 +33,18 @@ static const char *driverName="XspressChannelMaskPlugin";
   * \param[in] maxThreads The maximum number of threads this driver is allowed to use. If 0 then 1 will be used.
   */
 XspressChannelMaskPlugin::XspressChannelMaskPlugin(
-    const char *portName, int queueSize, int blockingCallbacks,
-    const char *NDArrayPort, int NDArrayAddr,
-    int maxBuffers, size_t maxMemory,
-    int priority, int stackSize, int maxThreads)
+    const char *portName,
+    int numChannels,
+    int queueSize,
+    int blockingCallbacks,
+    const char *NDArrayPort,
+    int NDArrayAddr,
+    int maxBuffers,
+    size_t maxMemory,
+    int priority,
+    int stackSize,
+    int maxThreads
+    )
     /* Invoke the base class constructor */
     : NDPluginDriver(portName, queueSize, blockingCallbacks,
         NDArrayPort, NDArrayAddr, 1, maxBuffers, maxMemory,
@@ -47,6 +55,15 @@ XspressChannelMaskPlugin::XspressChannelMaskPlugin(
 {
     // Create the asyn parameters
     createParam(XspressChannelMaskPluginUseString, asynParamInt32, &NDPluginUseMask);
+
+    for (int i=0; i<numChannels; i++)
+    {
+        std::string channelString("CH" + std::to_string(i) + "Enable");
+        int paramValue;
+        createParam(channelString.c_str(), asynParamInt32, &paramValue);
+        enabledChannels.push_back(paramValue);
+    }
+
 }
 
 
@@ -164,9 +181,10 @@ extern "C" {
 
     /* EPICS iocsh shell register commands */
 
-    static const iocshArg maskConfigArg0 = { "portName", iocshArgString };
-    static const iocshArg maskConfigArg1 = { "queue size", iocshArgInt };
-    static const iocshArg maskConfigArg2 = { "blocking callbacks", iocshArgInt };
+    static const iocshArg maskConfigArg0 = { "Asyn port name", iocshArgString };
+    static const iocshArg maskConfigArg1 = { "Number of channels", iocshArgInt };
+    static const iocshArg maskConfigArg1 = { "Max queue size", iocshArgInt };
+    static const iocshArg maskConfigArg2 = { "Blocking callbacks", iocshArgInt };
     static const iocshArg maskConfigArg3 = { "NDArrayPort", iocshArgString };
     static const iocshArg maskConfigArg4 = { "NDArrayAddr", iocshArgInt };
     static const iocshArg maskConfigArg5 = { "maxBuffers", iocshArgInt };
@@ -184,12 +202,13 @@ extern "C" {
         &maskConfigArg6,
         &maskConfigArg7,
         &maskConfigArg8,
-        &maskConfigArg9
+        &maskConfigArg9,
+        &maskConfigArg10
     };
 
     static const iocshFuncDef channelMaskDefinition = {
         "XspressChannelMaskConfigure",
-        10,
+        11,
         maskConfigArgs
     };
 
@@ -199,13 +218,14 @@ extern "C" {
             args[0].sval,
             args[1].ival,
             args[2].ival,
-            args[3].sval,
-            args[4].ival,
+            args[3].ival,
+            args[4].sval,
             args[5].ival,
             args[6].ival,
             args[7].ival,
             args[8].ival,
-            args[9].ival
+            args[9].ival,
+            args[10].ival
         );
     }
 

@@ -6,11 +6,10 @@
 epicsEnvSet("CHAN",   "ALL")
 epicsEnvSet("CHM1",   "ALL")
 
-
 # Per frame plugin chain (looks directly as Xspress driver)
 
 # Channel mask plugin to mask individual channels (set them to zero)
-XspressChannelMaskConfigure("$(PORT).CHANMASK", "$(QSIZE)", 0, "XSP3", 0, 0, 0, 0, 0, 1)
+XspressChannelMaskConfigure("$(PORT).CHANMASK", "$(NUM_CHANNELS)", "$(QSIZE)", 0, "XSP3", 0, 0, 0, 0, 0, 1)
 dbLoadRecords("xspress3ChannelMask.template", "P=$(PREFIX), R=det1:MASK, PORT=$(PORT).CHANMASK, NDARRAY_PORT=$(PORT)")
 
 # ROI plugin to sum across all (non-zero) channels

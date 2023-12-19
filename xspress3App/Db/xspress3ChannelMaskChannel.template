@@ -1,0 +1,36 @@
+#######################################################
+# Channel mask plugin template for a single channel
+# Ben Bradnick
+# December 2023
+#
+# This template is used with the Channel Mask plugin to control
+# masking of an individual channel.
+#
+# Macros:
+# % macro,  P,            Device prefix
+# % macro,  R,            Device suffix
+# % macro,  CHAN,         Channel number
+# % macro,  PORT,         Asyn port name
+# % macro,  ADDR,         Asyn address (set to zero)
+# % macro,  NDARRAY_PORT  Asyn port of upstream plugin/driver
+# % macro,  TIMEOUT,      Asyn timeout
+#
+#######################################################
+
+record(bo, "$(P)$(R):CH$(CHAN):ENABLE")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))CH$(CHAN)Enable")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+   field(VAL,  "0")
+}
+
+record(bi, "$(P)$(R):CH$(CHAN):ENABLE_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))CH$(CHAN)Enable")
+   field(SCAN, "I/O Intr")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+}
