@@ -132,7 +132,7 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
     }
     else
     {
-        for (int channel = 0; channel < enabledChannels.size(); channel++)
+        for (unsigned int channel = 0; channel < enabledChannels.size(); channel++)
         {
             if (param == enabledChannels[channel])
             {
