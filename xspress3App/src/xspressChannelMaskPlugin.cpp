@@ -153,6 +153,7 @@ extern "C" {
     /** Configuration command */
     int XspressChannelMaskConfigure(
         const char *portName,
+        int numChannels,
         int queueSize,
         int blockingCallbacks,
         const char *NDArrayPort,
@@ -165,6 +166,7 @@ extern "C" {
     {
         XspressChannelMaskPlugin *pPlugin = new XspressChannelMaskPlugin(
             portName,
+            numChannels,
             queueSize,
             blockingCallbacks,
             NDArrayPort,
@@ -183,15 +185,15 @@ extern "C" {
 
     static const iocshArg maskConfigArg0 = { "Asyn port name", iocshArgString };
     static const iocshArg maskConfigArg1 = { "Number of channels", iocshArgInt };
-    static const iocshArg maskConfigArg1 = { "Max queue size", iocshArgInt };
-    static const iocshArg maskConfigArg2 = { "Blocking callbacks", iocshArgInt };
-    static const iocshArg maskConfigArg3 = { "NDArrayPort", iocshArgString };
-    static const iocshArg maskConfigArg4 = { "NDArrayAddr", iocshArgInt };
-    static const iocshArg maskConfigArg5 = { "maxBuffers", iocshArgInt };
-    static const iocshArg maskConfigArg6 = { "maxMemory", iocshArgInt };
-    static const iocshArg maskConfigArg7 = { "priority", iocshArgInt };
-    static const iocshArg maskConfigArg8 = { "stackSize", iocshArgInt };
-    static const iocshArg maskConfigArg9 = { "maxThreads", iocshArgInt };
+    static const iocshArg maskConfigArg2 = { "Max queue size", iocshArgInt };
+    static const iocshArg maskConfigArg3 = { "Blocking callbacks", iocshArgInt };
+    static const iocshArg maskConfigArg4 = { "NDArrayPort", iocshArgString };
+    static const iocshArg maskConfigArg5 = { "NDArrayAddr", iocshArgInt };
+    static const iocshArg maskConfigArg6 = { "maxBuffers", iocshArgInt };
+    static const iocshArg maskConfigArg7 = { "maxMemory", iocshArgInt };
+    static const iocshArg maskConfigArg8 = { "priority", iocshArgInt };
+    static const iocshArg maskConfigArg9 = { "stackSize", iocshArgInt };
+    static const iocshArg maskConfigArg10 = { "maxThreads", iocshArgInt };
     static const iocshArg * const maskConfigArgs[] = {
         &maskConfigArg0,
         &maskConfigArg1,
