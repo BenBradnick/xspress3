@@ -25,3 +25,12 @@ record(bo, "$(P)$(R):USE")
    field(ONAM, "On")
    field(VAL,  "0")
 }
+
+record(bi, "$(P)$(R):USE_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))USE")
+   field(SCAN, "I/O Intr")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+}

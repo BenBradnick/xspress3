@@ -1,4 +1,5 @@
-# Load Default values for a single channel
+epicsEnvSet("CHAN",   "ALL")
+epicsEnvSet("CHM1",   "ALL")
 
 dbpf("$(PREFIX)ROI$(CHAN):MinY",    "$(CHM1)")
 dbpf("$(PREFIX)ROISUM$(CHAN):MinY", "$(CHM1)")

@@ -1,12 +1,12 @@
 
 file {
-	name="/home/xspress3/epics/xspress3/xspress3App/opi/adl/xspress3_mcarois.adl"
-	version=030112
+	name="/home/ben/epics/modules/xspress3/xspress3App/opi/adl/xspress3_mcasumrois.adl"
+	version=030118
 }
 display {
 	object {
-		x=695
-		y=31
+		x=685
+		y=37
 		width=1000
 		height=989
 	}
@@ -117,6 +117,7 @@ text {
 		ydata="$(P):MCASUM$(CHAN):ArrayData"
 		data_clr=14
 		yaxis=0
+		yside=0
 	}
 	x_axis {
 		rangeStyle="user-specified"
@@ -143,6 +144,7 @@ text {
 		ydata="$(P):MCA$(CHAN):ArrayData"
 		data_clr=14
 		yaxis=0
+		yside=0
 	}
 	x_axis {
 		rangeStyle="user-specified"
@@ -4434,4 +4436,51 @@ text {
 	align="horiz. right"
 	limits {
 	}
+}
+"text update" {
+	object {
+		x=800
+		y=550
+		width=70
+		height=20
+	}
+	monitor {
+		chan="$(P):det1:MASK:USE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=880
+		y=550
+		width=70
+		height=20
+	}
+	display[0] {
+		label="Plugin base"
+		name="NDPluginBase.adl"
+		args="P=$(P):,R=det1:MASK"
+	}
+	clr=14
+	bclr=55
+	label="-Plugin"
+}
+"choice button" {
+	object {
+		x=720
+		y=550
+		width=70
+		height=20
+	}
+	control {
+		chan="$(P):det1:MASK:USE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
 }
