@@ -1,4 +1,8 @@
-# Create a set of plugins for summing across all channels
+###############################################################################
+# Plugin chains for summed channels with masking
+###############################################################################
+
+# Macros for the templates
 epicsEnvSet("CHAN",   "ALL")
 epicsEnvSet("CHM1",   "ALL")
 
@@ -31,3 +35,6 @@ dbLoadRecords("NDROI.template", ,"P=$(PREFIX), R=ROISUM$(CHAN):, PORT=CHANSUM$(C
 # Standard arrays for visualisation
 NDStdArraysConfigure("MCASUM$(CHAN)", 5, 0, "CHANSUM$(CHAN)", 0, 0)
 dbLoadRecords("$(ADCORE)/db/NDStdArrays.template", "P=$(PREFIX),R=MCASUM$(CHAN):,PORT=MCASUM$(CHAN),ADDR=0,TIMEOUT=1,NDARRAY_PORT=CHANSUM$(CHAN),TYPE=Float64,FTVL=DOUBLE,NELEMENTS=$(NUM_BINS)")
+
+
+###############################################################################
