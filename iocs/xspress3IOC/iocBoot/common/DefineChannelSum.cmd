@@ -27,7 +27,7 @@ dbLoadRecords("$(ADCORE)/db/NDStdArrays.template", "P=$(PREFIX),R=MCA$(CHAN):,PO
 
 # Channel mask plugin to mask individual channels (set them to zero)
 XspressChannelMaskConfigure("$(PORT)SUM.CHANMASK", "$(NUM_CHANNELS)", "$(QSIZE)", 0, "PROC1", 0, 0, 0, 0, 0, 1)
-dbLoadRecords("xspress3ChannelMask.template", "P=$(PREFIX), R=det1:MASKSUM:, PORT=$(PORT).CHANMASK, NDARRAY_PORT=$(PORT)")
+dbLoadRecords("xspress3ChannelMask.template", "P=$(PREFIX), R=det1:MASKSUM:, PORT=$(PORT)SUM.CHANMASK, NDARRAY_PORT=$(PORT)")
 
 # ROI plugin to sum across all (non-zero) channels
 NDROIConfigure("CHANSUM$(CHAN)", "$(QSIZE)", 0, "$(PORT)SUM.CHANMASK", 0, -1, -1)
