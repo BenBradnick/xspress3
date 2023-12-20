@@ -36,7 +36,6 @@ record(bi, "$(P)$(R)USE_RBV")
    field(ONAM, "On")
 }
 
-include "xspress3ChannelMaskChannel.template"
 substitute "CHAN=1"
 include "xspress3ChannelMaskChannel.template"
 substitute "CHAN=2"
@@ -56,3 +55,4 @@ include "xspress3ChannelMaskChannel.template"
 substitute "CHAN=9"
 include "xspress3ChannelMaskChannel.template"
 substitute "CHAN=10"
+include "xspress3ChannelMaskChannel.template"
