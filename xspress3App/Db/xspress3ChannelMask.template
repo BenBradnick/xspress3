@@ -18,7 +18,7 @@
 
 include "NDPluginBase.template"
 
-record(bo, "$(P)$(R):USE")
+record(bo, "$(P)$(R)USE")
 {
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))USE")
@@ -27,7 +27,7 @@ record(bo, "$(P)$(R):USE")
    field(VAL,  "0")
 }
 
-record(bi, "$(P)$(R):USE_RBV")
+record(bi, "$(P)$(R)USE_RBV")
 {
    field(DTYP, "asynInt32")
    field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))USE")

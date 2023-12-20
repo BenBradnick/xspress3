@@ -17,7 +17,7 @@
 #
 #######################################################
 
-record(bo, "$(P)$(R):CH$(CHAN):ENABLE")
+record(bo, "$(P)$(R)CH$(CHAN):ENABLE")
 {
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))CH$(CHAN)Enable")
@@ -26,7 +26,7 @@ record(bo, "$(P)$(R):CH$(CHAN):ENABLE")
    field(VAL,  "0")
 }
 
-record(bi, "$(P)$(R):CH$(CHAN):ENABLE_RBV")
+record(bi, "$(P)$(R)CH$(CHAN):ENABLE_RBV")
 {
    field(DTYP, "asynInt32")
    field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))CH$(CHAN)Enable")

@@ -1,12 +1,12 @@
 
 file {
-	name="/home/ben/epics/modules/xspress3/xspress3App/opi/adl/xspress3_mcasumrois.adl"
+	name="/home/ben/development/xspress3/xspress3App/opi/adl/xspress3_mcasumrois.adl"
 	version=030118
 }
 display {
 	object {
-		x=304
-		y=104
+		x=294
+		y=96
 		width=1000
 		height=850
 	}
@@ -181,7 +181,7 @@ text {
 	display[0] {
 		label="Plugin base"
 		name="NDPluginBase.adl"
-		args="P=$(P):,R=det1:MASK"
+		args="P=$(P):,R=det1:MASK:"
 	}
 	clr=14
 	bclr=55
@@ -281,63 +281,52 @@ text {
 	}
 	textix="Apply channel masks"
 }
-composite {
+"choice button" {
 	object {
 		x=715
 		y=335
-		width=265
+		width=100
 		height=20
 	}
-	"composite name"=""
-	children {
-		"choice button" {
-			object {
-				x=715
-				y=335
-				width=100
-				height=20
-			}
-			control {
-				chan="$(P):det1:MASKSUM:USE"
-				clr=14
-				bclr=3
-			}
-			stacking="column"
-		}
-		"text update" {
-			object {
-				x=825
-				y=335
-				width=70
-				height=20
-			}
-			monitor {
-				chan="$(P):det1:MASKSUM:USE_RBV"
-				clr=54
-				bclr=0
-			}
-			align="horiz. right"
-			format="string"
-			limits {
-			}
-		}
-		"related display" {
-			object {
-				x=910
-				y=335
-				width=70
-				height=20
-			}
-			display[0] {
-				label="Plugin base"
-				name="NDPluginBase.adl"
-				args="P=$(P):,R=det1:MASKSUM"
-			}
-			clr=14
-			bclr=55
-			label="-Plugin"
-		}
+	control {
+		chan="$(P):det1:MASKSUM:USE"
+		clr=14
+		bclr=3
 	}
+	stacking="column"
+}
+"text update" {
+	object {
+		x=825
+		y=335
+		width=70
+		height=20
+	}
+	monitor {
+		chan="$(P):det1:MASKSUM:USE_RBV"
+		clr=54
+		bclr=0
+	}
+	align="horiz. right"
+	format="string"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=910
+		y=335
+		width=70
+		height=20
+	}
+	display[0] {
+		label="Plugin base"
+		name="NDPluginBase.adl"
+		args="P=$(P):,R=det1:MASKSUM:"
+	}
+	clr=14
+	bclr=55
+	label="-Plugin"
 }
 "text update" {
 	object {
