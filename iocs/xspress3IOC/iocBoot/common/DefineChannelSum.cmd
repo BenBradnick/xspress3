@@ -16,7 +16,7 @@ dbLoadRecords("xspress3ChannelMask.template", "P=$(PREFIX), R=det1:MASK:, PORT=$
 
 # ROI plugin to sum across all (non-zero) channels
 NDROIConfigure("CHAN$(CHAN)", "$(QSIZE)", 0, "$(PORT).CHANMASK", 0, -1, -1)
-dbLoadRecords("NDROI.template", ,"P=$(PREFIX), R=ROI$(CHAN):, PORT=CHAN$(CHAN), TIMEOUT=1, ADDR=0, NDARRAY_PORT=$(PORT), NDARRAY_ADDR=0, Enabled=0")
+dbLoadRecords("NDROI.template", "P=$(PREFIX), R=ROI$(CHAN):, PORT=CHAN$(CHAN), TIMEOUT=1, ADDR=0, NDARRAY_PORT=$(PORT), NDARRAY_ADDR=0, Enabled=0")
 
 # Standard arrays for visualisation
 NDStdArraysConfigure("MCA$(CHAN)", 5, 0, "CHAN$(CHAN)", 0, 0)
@@ -31,7 +31,7 @@ dbLoadRecords("xspress3ChannelMask.template", "P=$(PREFIX), R=det1:MASKSUM:, POR
 
 # ROI plugin to sum across all (non-zero) channels
 NDROIConfigure("CHANSUM$(CHAN)", "$(QSIZE)", 0, "$(PORT)SUM.CHANMASK", 0, -1, -1)
-dbLoadRecords("NDROI.template", ,"P=$(PREFIX), R=ROISUM$(CHAN):, PORT=CHANSUM$(CHAN), TIMEOUT=1, ADDR=0, NDARRAY_PORT=PROC1, NDARRAY_ADDR=0, Enabled=0")
+dbLoadRecords("NDROI.template", "P=$(PREFIX), R=ROISUM$(CHAN):, PORT=CHANSUM$(CHAN), TIMEOUT=1, ADDR=0, NDARRAY_PORT=PROC1, NDARRAY_ADDR=0, Enabled=0")
 
 # Standard arrays for visualisation
 NDStdArraysConfigure("MCASUM$(CHAN)", 5, 0, "CHANSUM$(CHAN)", 0, 0)

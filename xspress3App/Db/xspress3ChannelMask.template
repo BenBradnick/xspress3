@@ -18,24 +18,6 @@
 
 include "NDPluginBase.template"
 
-record(bo, "$(P)$(R)USE")
-{
-   field(DTYP, "asynInt32")
-   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))USE")
-   field(ZNAM, "Off")
-   field(ONAM, "On")
-   field(VAL,  "0")
-}
-
-record(bi, "$(P)$(R)USE_RBV")
-{
-   field(DTYP, "asynInt32")
-   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))USE")
-   field(SCAN, "I/O Intr")
-   field(ZNAM, "Off")
-   field(ONAM, "On")
-}
-
 substitute "CHAN=1"
 include "xspress3ChannelMaskChannel.template"
 substitute "CHAN=2"
@@ -56,3 +38,21 @@ substitute "CHAN=9"
 include "xspress3ChannelMaskChannel.template"
 substitute "CHAN=10"
 include "xspress3ChannelMaskChannel.template"
+
+record(bo, "$(P)$(R)USE")
+{
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))USE")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+   field(VAL,  "0")
+}
+
+record(bi, "$(P)$(R)USE_RBV")
+{
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))USE")
+   field(SCAN, "I/O Intr")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+}
