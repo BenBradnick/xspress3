@@ -16,7 +16,5 @@ dbpf("$(PREFIX)ROI$(CHAN):EnableCallbacks", "Enable")
 dbpf("$(PREFIX)MCA$(CHAN):EnableCallbacks", "Enable")
 dbpf("$(PREFIX)ROISUM$(CHAN):EnableCallbacks", "Enable")
 dbpf("$(PREFIX)MCASUM$(CHAN):EnableCallbacks", "Enable")
-dbpf("$(PREFIX)MCA$(CHAN)ROI:EnableCallbacks", "Enable")
-dbpf("$(PREFIX)MCA$(CHAN)ROI:TSNumPoints", "NCHANS=$(MAXFRAMES)")
 
 dbpf("$(PREFIX)MCA$(CHAN):ArrayData.LOPR", 0.5)
