@@ -134,7 +134,7 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
     {
         for (unsigned int channel = 0; channel < enabledChannels.size(); channel++)
         {
-            if (param == (unsigned int) enabledChannels[channel])
+            if (param == enabledChannels[channel])
             {
                 pluginParam = true;
                 printf("%s: channel %d enable: %d\n", driverName, channel, value);

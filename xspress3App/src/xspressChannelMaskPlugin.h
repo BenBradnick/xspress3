@@ -41,7 +41,7 @@ public:
 
 protected:
     int NDPluginUseMask; // Whether to use the mask
-    std::vector<unsigned int> enabledChannels; // Vector of enabled channels
+    std::vector<int> enabledChannels; // Vector of enabled channels
 
 private:
     void applyMask(NDArray *pArray);
