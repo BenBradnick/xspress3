@@ -18,6 +18,10 @@
 
 include "NDPluginBase.template"
 
+substitute  "ROI=1:"
+substitute "ADDR=0"
+include "NDROIStatN.template"
+
 substitute "CHAN=1"
 include "xspress3ChannelMaskChannel.template"
 substitute "CHAN=2"
