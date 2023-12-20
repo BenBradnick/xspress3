@@ -4,9 +4,7 @@ include $(TOP)/configure/CONFIG
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 
 #----------------------------------------------------
-# In a Diamond Support Module, install
-# templates like this
-#
+# Templates
 DB += xspress3.template
 DB += xspress3Channel.template
 DB += xspress3ChannelSCALimits.template
@@ -24,6 +22,7 @@ DB += xspress3Deadtime_16Channel.template
 DB += xspress3Deadtime_4Channel.template
 DB += xspress3Deadtime_8Channel.template
 DB += xspress3ChannelMask.template
+DB += xspress3ChannelMaskChannel.template
 
 include $(TOP)/configure/RULES
 #----------------------------------------
