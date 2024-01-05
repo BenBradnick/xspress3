@@ -177,6 +177,7 @@ void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
         {
             printf("%s: masking channel %d\n", driverName, channelIndex+1);
         }
+        else printf("%s: NOT masking channel %d\n", driverName, channelIndex+1);
     }
 }
 
