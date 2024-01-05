@@ -183,6 +183,7 @@ void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
     );
 
     // TODO: implement function
+    // See doComputeHistogram and doComputeHistogramT from NDPluginStats to get type working. 
     for (unsigned int channelIndex = 0; channelIndex < channelMasked.size(); channelIndex++)
     {
         if (channelMasked[channelIndex] == true)
