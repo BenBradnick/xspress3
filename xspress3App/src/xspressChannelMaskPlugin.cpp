@@ -88,7 +88,7 @@ void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
     if (apply == 1)
     {
         // Copy the array
-        NDArray *pArrayCopy = this->pNDArrayPool->copy(pArray, NULL, true);
+        NDArray *pArrayCopy = this->pNDArrayPool->copy(pArray, NULL, true, true, true);
 
         this->unlock();
 
@@ -172,8 +172,8 @@ void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
         "%s: dims: %d, x size: %d, y size: %d\n",
         driverName,
         pArray->ndims,
-        pArray->dims[0],
-        pArray->dims[1]
+        pArray->dims[0].size,
+        pArray->dims[1].size
     );
 
     // TODO: implement function
