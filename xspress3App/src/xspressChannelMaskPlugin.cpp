@@ -87,8 +87,6 @@ void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
     getIntegerParam(NDPluginUseMask, &apply);
     if (apply == 1)
     {
-        printf("%s: applying mask\n", driverName);
-
         // Copy the array
         NDArray *pArrayCopy = this->pNDArrayPool->copy(pArray, NULL, true);
 
@@ -106,7 +104,6 @@ void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
     else
     {
         // No mask applied - publish original array
-        printf("%s: skipping mask\n", driverName);
         NDPluginDriver::endProcessCallbacks(pArray, true, true);
     }
 }
@@ -170,6 +167,15 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
  */
 void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
 {
+    printf("%s: applying mask to array\n", driverName);
+    printf(
+        "%s: dims: %d, x size: %d, y size: %d\n",
+        driverName,
+        pArray.ndims,
+        pArray.dims[0],
+        pArray.dims[1]
+    );
+
     // TODO: implement function
     for (unsigned int channelIndex = 0; channelIndex < channelMasked.size(); channelIndex++)
     {
