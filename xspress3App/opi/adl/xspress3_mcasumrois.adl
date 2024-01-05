@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=294
-		y=96
+		x=3340
+		y=204
 		width=1000
 		height=850
 	}
@@ -211,7 +211,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Channel selection"
+	textix="Channels enabled"
 }
 "choice button" {
 	object {
@@ -1538,7 +1538,7 @@ text {
 		height=17
 	}
 	monitor {
-		chan="$(P):det1:MASK:CH1:ENABLE_RBV"
+		chan="$(P):det1:MASK:CH29:ENABLE_RBV"
 		clr=54
 		bclr=0
 	}
@@ -1691,4 +1691,19 @@ text {
 	}
 	textix="32"
 	align="horiz. right"
+}
+"related display" {
+	object {
+		x=715
+		y=565
+		width=175
+		height=20
+	}
+	display[0] {
+		name="xspress3_chan_sum_plugins.adl"
+		args="P=$(P):, R=$(CHAN)"
+	}
+	clr=14
+	bclr=55
+	label="-areaDetector Plugins"
 }

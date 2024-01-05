@@ -79,6 +79,8 @@ XspressChannelMaskPlugin::XspressChannelMaskPlugin(
  */
 void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
 {
+    // TODO: check if we need to check for NDArrayCallbacks before doing anything
+
     /* Call the base class method */
     NDPluginDriver::beginProcessCallbacks(pArray);
 
@@ -162,6 +164,10 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
 
 /**
  * @brief Apply the channel mask based on the selected channels to mask out
+ * 
+ * The array dimensions should not have been altered from the source Xspress
+ * driver so that the NDArray has 2 dimensions with channel number on the Y
+ * (second) dimension.
  * 
  * @param pArray NDArray to apply channel masks to
  */

@@ -980,7 +980,7 @@ asynStatus Xspress3::eraseSCAMCAROI(void)
   pMCA= this->pNDArrayPool->alloc(2, dims, dataType, 0, NULL);
 
   if (pMCA !=NULL) {
-    memset(pMCA->pData,0,pMCA->dataSize);
+    memset(pMCA->pData, 0, pMCA->dataSize);
     this->setNDArrayAttributes(pMCA, -1);
 
     this->lock();
