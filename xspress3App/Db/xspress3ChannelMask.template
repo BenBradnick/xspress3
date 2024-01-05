@@ -25,7 +25,7 @@ include "NDPluginBase.template"
 
 record(bo, "$(P)$(R)USE")
 {
-   field(DESC, "Enable/disable the channel masking)
+   field(DESC, "Enable channel masking")
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))USE")
    field(ZNAM, "Off")
@@ -35,7 +35,7 @@ record(bo, "$(P)$(R)USE")
 
 record(bi, "$(P)$(R)USE_RBV")
 {
-   field(DESC, "Enable/disable the channel masking)
+   field(DESC, "Enable channel masking")
    field(DTYP, "asynInt32")
    field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))USE")
    field(SCAN, "I/O Intr")

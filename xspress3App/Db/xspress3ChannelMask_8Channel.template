@@ -19,7 +19,7 @@
 
 record(bo, "$(P)$(R)CH1:ENABLE")
 {
-   field(DESC, "Enable channel (disable will set values to 0)")
+   field(DESC, "Enable channel (or mask)")
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))CH1Enable")
    field(ZNAM, "Off")
@@ -39,7 +39,7 @@ record(bi, "$(P)$(R)CH1:ENABLE_RBV")
 
 record(bo, "$(P)$(R)CH2:ENABLE")
 {
-   field(DESC, "Enable channel (disable will set values to 0)")
+   field(DESC, "Enable channel (or mask)")
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))CH2Enable")
    field(ZNAM, "Off")
@@ -59,7 +59,7 @@ record(bi, "$(P)$(R)CH2:ENABLE_RBV")
 
 record(bo, "$(P)$(R)CH3:ENABLE")
 {
-   field(DESC, "Enable channel (disable will set values to 0)")
+   field(DESC, "Enable channel (or mask)")
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))CH3Enable")
    field(ZNAM, "Off")
@@ -79,7 +79,7 @@ record(bi, "$(P)$(R)CH3:ENABLE_RBV")
 
 record(bo, "$(P)$(R)CH4:ENABLE")
 {
-   field(DESC, "Enable channel (disable will set values to 0)")
+   field(DESC, "Enable channel (or mask)")
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))CH4Enable")
    field(ZNAM, "Off")
@@ -99,7 +99,7 @@ record(bi, "$(P)$(R)CH4:ENABLE_RBV")
 
 record(bo, "$(P)$(R)CH5:ENABLE")
 {
-   field(DESC, "Enable channel (disable will set values to 0)")
+   field(DESC, "Enable channel (or mask)")
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))CH5Enable")
    field(ZNAM, "Off")
@@ -119,7 +119,7 @@ record(bi, "$(P)$(R)CH5:ENABLE_RBV")
 
 record(bo, "$(P)$(R)CH6:ENABLE")
 {
-   field(DESC, "Enable channel (disable will set values to 0)")
+   field(DESC, "Enable channel (or mask)")
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))CH6Enable")
    field(ZNAM, "Off")
@@ -139,7 +139,7 @@ record(bi, "$(P)$(R)CH6:ENABLE_RBV")
 
 record(bo, "$(P)$(R)CH7:ENABLE")
 {
-   field(DESC, "Enable channel (disable will set values to 0)")
+   field(DESC, "Enable channel (or mask)")
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))CH7Enable")
    field(ZNAM, "Off")
@@ -159,7 +159,7 @@ record(bi, "$(P)$(R)CH7:ENABLE_RBV")
 
 record(bo, "$(P)$(R)CH8:ENABLE")
 {
-   field(DESC, "Enable channel (disable will set values to 0)")
+   field(DESC, "Enable channel (or mask)")
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))CH8Enable")
    field(ZNAM, "Off")
