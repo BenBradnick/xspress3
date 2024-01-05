@@ -67,7 +67,7 @@ XspressChannelMaskPlugin::XspressChannelMaskPlugin(
     }
 
     // Initialise the mask vector to all False (i.e. not masked)
-    channelMasked(numChannels, false);
+    channelMasked = std::vector<bool>(numChannels, false);
 
 }
 
@@ -172,7 +172,7 @@ void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
     {
         if (channelMasked[channelIndex] == true)
         {
-            printf("%s: masking channel %d\n", driverName, channel+1);
+            printf("%s: masking channel %d\n", driverName, channelIndex+1);
         }
     }
 }
