@@ -144,6 +144,9 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
                 printf("%s: channel %d enable: %d\n", driverName, channel+1, value);
                 status = (asynStatus) setIntegerParam(param, value);
 
+                // Set the mask state
+                channelMasked[channel] = (value == 1) ? false : true;
+
                 callParamCallbacks();
                 break;
             }
