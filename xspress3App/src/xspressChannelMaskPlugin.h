@@ -41,7 +41,10 @@ public:
 
 protected:
     int NDPluginUseMask; // Whether to use the mask
-    std::vector<int> enabledChannels; // Vector of enabled channels
+
+    std::vector<int> channelMaskParams; // Vector of asyn param indices for each channel
+    std::vector<bool> channelMasked; // Vector containing mask state for each channel
+
 
 private:
     void applyMask(NDArray *pArray);

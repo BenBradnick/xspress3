@@ -61,10 +61,13 @@ XspressChannelMaskPlugin::XspressChannelMaskPlugin(
     for (int i=1; i<=numChannels; i++)
     {
         std::string channelString("CH" + std::to_string(i) + "Enable");
-        int paramValue;
-        createParam(channelString.c_str(), asynParamInt32, &paramValue);
-        enabledChannels.push_back(paramValue);
+        int paramIndex;
+        createParam(channelString.c_str(), asynParamInt32, &paramIndex);
+        channelMaskParams.push_back(paramIndex);
     }
+
+    // Initialise the mask vector to all False (i.e. not masked)
+    channelMasked(numChannels, false);
 
 }
 
@@ -79,20 +82,20 @@ void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
     /* Call the base class method */
     NDPluginDriver::beginProcessCallbacks(pArray);
 
+    // Check if we need to apply the channel masks
     int apply;
     getIntegerParam(NDPluginUseMask, &apply);
-
     if (apply == 1)
     {
         printf("%s: applying mask\n", driverName);
 
-        this->unlock();
-
         // Copy the array
         NDArray *pArrayCopy = this->pNDArrayPool->copy(pArray, NULL, true);
 
-        // TODO: apply the channel mask based on selected user options
-        
+        this->unlock();
+
+        // Apply the channel masks
+        applyMask(pArrayCopy);
 
         this->lock();
 
@@ -133,13 +136,14 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
     }
     else
     {
-        for (unsigned int channel = 0; channel < enabledChannels.size(); channel++)
+        for (unsigned int channel = 0; channel < channelMaskParams.size(); channel++)
         {
-            if (param == enabledChannels[channel])
+            if (param == channelMaskParams[channel])
             {
                 pluginParam = true;
-                printf("%s: channel %d enable: %d\n", driverName, channel, value);
+                printf("%s: channel %d enable: %d\n", driverName, channel+1, value);
                 status = (asynStatus) setIntegerParam(param, value);
+
                 callParamCallbacks();
                 break;
             }
@@ -159,11 +163,18 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
 /**
  * @brief Apply the channel mask based on the selected channels to mask out
  * 
- * @param pArray NDArray to apply mask to
+ * @param pArray NDArray to apply channel masks to
  */
 void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
 {
     // TODO: implement function
+    for (unsigned int channelIndex = 0; channelIndex < channelMasked.size(); channelIndex++)
+    {
+        if (channelMasked[channelIndex] == true)
+        {
+            printf("%s: masking channel %d\n", driverName, channel+1);
+        }
+    }
 }
 
 
