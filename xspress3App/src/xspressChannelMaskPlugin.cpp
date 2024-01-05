@@ -57,7 +57,8 @@ XspressChannelMaskPlugin::XspressChannelMaskPlugin(
     // Create the asyn parameters
     createParam(XspressChannelMaskPluginUseString, asynParamInt32, &NDPluginUseMask);
 
-    for (int i=0; i<numChannels; i++)
+    // Use 1-indexed values for channel number in parameter name
+    for (int i=1; i<=numChannels; i++)
     {
         std::string channelString("CH" + std::to_string(i) + "Enable");
         int paramValue;
