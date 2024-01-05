@@ -171,9 +171,9 @@ void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
     printf(
         "%s: dims: %d, x size: %d, y size: %d\n",
         driverName,
-        pArray.ndims,
-        pArray.dims[0],
-        pArray.dims[1]
+        pArray->ndims,
+        pArray->dims[0],
+        pArray->dims[1]
     );
 
     // TODO: implement function
