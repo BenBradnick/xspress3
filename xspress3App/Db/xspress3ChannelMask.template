@@ -3,8 +3,13 @@
 # Ben Bradnick
 # December 2023
 #
-# This template is used with the Channel Mask plugin to control
-# which channels are masked out (set to zero).
+# The main template for the Channel Mask plugin to
+# control whether the masking process is enabled or
+# disabled.
+#
+# The records to mask specific channels is are
+# located in the template with _NChannel appended
+# in the name.
 #
 # Macros:
 # % macro,  P,            Device prefix
@@ -18,33 +23,9 @@
 
 include "NDPluginBase.template"
 
-substitute  "ROI=1:"
-substitute "ADDR=0"
-include "NDROIStatN.template"
-
-substitute "CHAN=1"
-include "xspress3ChannelMaskChannel.template"
-substitute "CHAN=2"
-include "xspress3ChannelMaskChannel.template"
-substitute "CHAN=3"
-include "xspress3ChannelMaskChannel.template"
-substitute "CHAN=4"
-include "xspress3ChannelMaskChannel.template"
-substitute "CHAN=5"
-include "xspress3ChannelMaskChannel.template"
-substitute "CHAN=6"
-include "xspress3ChannelMaskChannel.template"
-substitute "CHAN=7"
-include "xspress3ChannelMaskChannel.template"
-substitute "CHAN=8"
-include "xspress3ChannelMaskChannel.template"
-substitute "CHAN=9"
-include "xspress3ChannelMaskChannel.template"
-substitute "CHAN=10"
-include "xspress3ChannelMaskChannel.template"
-
 record(bo, "$(P)$(R)USE")
 {
+   field(DESC, "Enable/disable the channel masking)
    field(DTYP, "asynInt32")
    field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))USE")
    field(ZNAM, "Off")
@@ -54,6 +35,7 @@ record(bo, "$(P)$(R)USE")
 
 record(bi, "$(P)$(R)USE_RBV")
 {
+   field(DESC, "Enable/disable the channel masking)
    field(DTYP, "asynInt32")
    field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))USE")
    field(SCAN, "I/O Intr")

@@ -13,6 +13,7 @@ epicsEnvSet("CHM1",   "ALL")
 # Channel mask plugin to mask individual channels (set them to zero)
 XspressChannelMaskConfigure("$(PORT).CHANMASK", "$(NUM_CHANNELS)", "$(QSIZE)", 0, "XSP3", 0, 0, 0, 0, 0, 1)
 dbLoadRecords("xspress3ChannelMask.template", "P=$(PREFIX), R=det1:MASK:, PORT=$(PORT).CHANMASK, NDARRAY_PORT=$(PORT)")
+dbLoadRecords("xspress3ChannelMask_$(NUM_CHANNELS)Channel.template", "P=$(PREFIX), R=det1:MASK:, PORT=$(PORT).CHANMASK, NDARRAY_PORT=$(PORT)")
 
 # ROI plugin to sum across all (non-zero) channels
 NDROIConfigure("CHAN$(CHAN)", "$(QSIZE)", 0, "$(PORT).CHANMASK", 0, -1, -1)
@@ -23,11 +24,12 @@ NDStdArraysConfigure("MCA$(CHAN)", 5, 0, "CHAN$(CHAN)", 0, 0)
 dbLoadRecords("$(ADCORE)/db/NDStdArrays.template", "P=$(PREFIX),R=MCA$(CHAN):,PORT=MCA$(CHAN),ADDR=0,TIMEOUT=1,NDARRAY_PORT=CHAN$(CHAN),TYPE=Float64,FTVL=DOUBLE,NELEMENTS=$(NUM_BINS)")
 
 
-# Accumulation plugin chain (looks at PROC plugin)
+# Accumulation plugin chain (looks at PROC plugin to accumulate across multiple frames)
 
 # Channel mask plugin to mask individual channels (set them to zero)
 XspressChannelMaskConfigure("$(PORT)SUM.CHANMASK", "$(NUM_CHANNELS)", "$(QSIZE)", 0, "PROC1", 0, 0, 0, 0, 0, 1)
 dbLoadRecords("xspress3ChannelMask.template", "P=$(PREFIX), R=det1:MASKSUM:, PORT=$(PORT)SUM.CHANMASK, NDARRAY_PORT=$(PORT)")
+dbLoadRecords("xspress3ChannelMask_$(NUM_CHANNELS)Channel.template", "P=$(PREFIX), R=det1:MASKSUM:, PORT=$(PORT).CHANMASK, NDARRAY_PORT=$(PORT)")
 
 # ROI plugin to sum across all (non-zero) channels
 NDROIConfigure("CHANSUM$(CHAN)", "$(QSIZE)", 0, "$(PORT)SUM.CHANMASK", 0, -1, -1)
