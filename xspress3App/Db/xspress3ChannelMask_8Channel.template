@@ -12,7 +12,6 @@
 # % macro,  R,            Device suffix
 # % macro,  PORT,         Asyn port name
 # % macro,  ADDR,         Asyn address (set to zero)
-# % macro,  NDARRAY_PORT  Asyn port of upstream plugin/driver
 # % macro,  TIMEOUT,      Asyn timeout
 #
 #######################################################
