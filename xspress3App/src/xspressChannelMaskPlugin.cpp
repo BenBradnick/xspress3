@@ -84,6 +84,11 @@ void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
     /* Call the base class method */
     NDPluginDriver::beginProcessCallbacks(pArray);
 
+    // Check if we are enabled
+    int arrayCallbacks;
+    getIntegerParam(NDArrayCallbacks, &arrayCallbacks);
+    if (arrayCallbacks == 0) return;
+
     // Check if we need to apply the channel masks
     int apply;
     getIntegerParam(NDPluginUseMask, &apply);
@@ -242,7 +247,8 @@ void XspressChannelMaskPlugin::setChannelValuesToZeroT(NDArray *pArray, int chan
 {
     epicsType *pData = (epicsType *)pArray->pData;
     unsigned int channelOffset = pArray->dims[0].size * channelIndex;
-    for (unsigned int i=0; i<pArray->dims[1].size; i++)
+    printf("%s: Offset: %u\n", driverName, channelOffset);
+    for (unsigned int i=0; i<pArray->dims[0].size; i++)
     {
         *(pData + i + channelOffset) = 0;
     }
