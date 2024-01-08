@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=2081
-		y=206
+		x=2242
+		y=483
 		width=940
-		height=250
+		height=200
 	}
 	clr=14
 	bclr=4
@@ -139,8 +139,8 @@ text {
 }
 "text update" {
 	object {
-		x=10
-		y=61
+		x=40
+		y=60
 		width=110
 		height=18
 	}
@@ -156,9 +156,9 @@ text {
 }
 "text update" {
 	object {
-		x=125
-		y=61
-		width=160
+		x=155
+		y=60
+		width=120
 		height=18
 	}
 	monitor {
@@ -374,8 +374,8 @@ text {
 }
 "text update" {
 	object {
-		x=10
-		y=90
+		x=40
+		y=89
 		width=110
 		height=18
 	}
@@ -391,9 +391,9 @@ text {
 }
 "text update" {
 	object {
-		x=125
-		y=90
-		width=160
+		x=155
+		y=89
+		width=120
 		height=18
 	}
 	monitor {
@@ -531,8 +531,8 @@ menu {
 }
 "text update" {
 	object {
-		x=10
-		y=121
+		x=40
+		y=120
 		width=110
 		height=18
 	}
@@ -548,9 +548,9 @@ menu {
 }
 "text update" {
 	object {
-		x=125
-		y=121
-		width=160
+		x=155
+		y=120
+		width=120
 		height=18
 	}
 	monitor {
@@ -685,4 +685,161 @@ menu {
 	clr=14
 	bclr=51
 	label="-STD"
+}
+"text update" {
+	object {
+		x=40
+		y=150
+		width=110
+		height=18
+	}
+	monitor {
+		chan="$(P)MCASUM$(R):PortName_RBV"
+		clr=54
+		bclr=4
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=155
+		y=150
+		width=120
+		height=18
+	}
+	monitor {
+		chan="$(P)MCASUM$(R):PluginType_RBV"
+		clr=54
+		bclr=4
+	}
+	align="horiz. centered"
+	format="string"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=290
+		y=151
+		width=60
+		height=20
+	}
+	control {
+		chan="$(P)MCASUM$(R):NDArrayPort"
+		clr=14
+		bclr=51
+	}
+	limits {
+	}
+}
+menu {
+	object {
+		x=355
+		y=151
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)MCASUM$(R):EnableCallbacks"
+		clr=14
+		bclr=51
+	}
+}
+"text update" {
+	object {
+		x=440
+		y=151
+		width=80
+		height=18
+	}
+	monitor {
+		chan="$(P)MCASUM$(R):EnableCallbacks_RBV"
+		clr=54
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+menu {
+	object {
+		x=525
+		y=150
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)MCASUM$(R):BlockingCallbacks"
+		clr=14
+		bclr=51
+	}
+}
+"text update" {
+	object {
+		x=610
+		y=151
+		width=80
+		height=18
+	}
+	monitor {
+		chan="$(P)MCASUM$(R):DroppedArrays_RBV"
+		clr=54
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=695
+		y=151
+		width=80
+		height=18
+	}
+	monitor {
+		chan="$(P)MCASUM$(R):QueueFree"
+		clr=54
+		bclr=12
+	}
+	clrmod="alarm"
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=780
+		y=151
+		width=80
+		height=18
+	}
+	monitor {
+		chan="$(P)MCASUM$(R):ArrayRate_RBV"
+		clr=54
+		bclr=4
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"related display" {
+	object {
+		x=870
+		y=151
+		width=60
+		height=20
+	}
+	display[0] {
+		label="STDSUM"
+		name="NDStdArrays.adl"
+		args="P=$(P),R=MCASUM$(R):"
+	}
+	clr=14
+	bclr=51
+	label="-STDSUM"
 }
