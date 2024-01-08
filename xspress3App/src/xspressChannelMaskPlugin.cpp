@@ -179,7 +179,7 @@ void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
 {
     // Sanity check on array dimensions
     unsigned int numDims = (unsigned int)pArray->ndims;
-    unsigned int yDimension = (unsigned int)pArray->dims[0].size;
+    unsigned int yDimension = (unsigned int)pArray->dims[1].size;
     if (numDims < 2)
     {
         // TODO: replace printf with asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR, "", *args)
