@@ -22,8 +22,8 @@ record(bo, "$(P)$(R)CH1:ENABLE")
 {
     field(DESC, "Enable channel")
     field(VAL, "1")
-    field(ONAM, "Enabled")
-    field(ZNAM, "Disabled")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
     field(PINI, "YES")
     field(FLNK, "$(P)$(R)CH1:ENABLE_FAN.PROC")
 }
@@ -33,15 +33,15 @@ record(dfanout, "$(P)$(R)CH1:ENABLE_FAN")
     field(DOL, "$(P)$(R)CH1:ENABLE.VAL")
     field(OMSL, "closed_loop")
     field(OUTA, "$(P)$(R1)CH1:ENABLE PP")
-    field(OUTA, "$(P)$(R2)CH1:ENABLE PP")
+    field(OUTB, "$(P)$(R2)CH1:ENABLE PP")
 }
 
 record(bo, "$(P)$(R)CH2:ENABLE")
 {
     field(DESC, "Enable channel")
     field(VAL, "1")
-    field(ONAM, "Enabled")
-    field(ZNAM, "Disabled")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
     field(PINI, "YES")
     field(FLNK, "$(P)$(R)CH2:ENABLE_FAN.PROC")
 }
@@ -51,5 +51,5 @@ record(dfanout, "$(P)$(R)CH2:ENABLE_FAN")
     field(DOL, "$(P)$(R)CH2:ENABLE.VAL")
     field(OMSL, "closed_loop")
     field(OUTA, "$(P)$(R1)CH2:ENABLE PP")
-    field(OUTA, "$(P)$(R2)CH2:ENABLE PP")
+    field(OUTB, "$(P)$(R2)CH2:ENABLE PP")
 }
