@@ -178,12 +178,23 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
 void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
 {
     // Sanity check on array dimensions
-    unsigned int yDimension = (unsigned int)dims[0].size;
-    if (yDimension != channelMasked.size())
+    unsigned int numDims = (unsigned int)pArray->ndims;
+    unsigned int yDimension = (unsigned int)pArray->dims[0].size;
+    if (numDims < 2)
     {
         // TODO: replace printf with asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR, "", *args)
         printf(
-            "%s: expected Y dimension of size %lu, got %lu (skipping mask)\n",
+            "%s: expected at least 2 dimensions, got %u (skipping mask)\n",
+            driverName,
+            numDims
+        );
+        return;
+    }
+    else if (yDimension != channelMasked.size())
+    {
+        // TODO: replace printf with asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR, "", *args)
+        printf(
+            "%s: expected Y dimension of size %lu, got %u (skipping mask)\n",
             driverName,
             channelMasked.size(),
             yDimension
