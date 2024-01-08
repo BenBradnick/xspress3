@@ -100,7 +100,9 @@ void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
         this->unlock();
 
         // Apply the channel masks
+        std::lock(maskVectorMutex);
         applyMask(pArrayCopy);
+        maskVectorMutex.unlock();
 
         this->lock();
 
@@ -149,8 +151,10 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
                 status = (asynStatus) setIntegerParam(param, value);
 
                 // Set the mask state
-                // TODO: make thread safe with a lock
-                channelMasked[channel] = (value == 1) ? false : true;
+                {
+                    std::lock(maskVectorMutex);
+                    channelMasked[channel] = (value == 1) ? false : true;
+                }
 
                 callParamCallbacks();
                 break;
@@ -247,7 +251,6 @@ void XspressChannelMaskPlugin::setChannelValuesToZeroT(NDArray *pArray, int chan
 {
     epicsType *pData = (epicsType *)pArray->pData;
     unsigned int channelOffset = pArray->dims[0].size * channelIndex;
-    printf("%s: Offset: %u\n", driverName, channelOffset);
     for (unsigned int i=0; i<pArray->dims[0].size; i++)
     {
         *(pData + i + channelOffset) = 0;

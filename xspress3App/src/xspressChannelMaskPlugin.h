@@ -10,6 +10,8 @@
 
 #include "NDPluginDriver.h"
 
+#include <mutex>
+
 
 #define XspressChannelMaskPluginUseString  "USE"         // (asynInt32,   r/w) String for enabling mask
 
@@ -51,6 +53,8 @@ private:
 
     template <typename epicsType>
     void setChannelValuesToZeroT(NDArray *pArray, int channelIndex);
+
+    std::mutex maskVectorMutex;
 
 };
 

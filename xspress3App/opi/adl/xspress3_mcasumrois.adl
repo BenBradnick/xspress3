@@ -97,7 +97,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="Xspress3 $(P) Channel $(CHAN) MCA Data"
+	textix="Xspress3 $(P) Summed channels MCA data"
 	align="horiz. centered"
 }
 "cartesian plot" {
