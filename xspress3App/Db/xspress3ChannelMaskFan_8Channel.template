@@ -53,3 +53,112 @@ record(dfanout, "$(P)$(R)CH2:ENABLE_FAN")
     field(OUTA, "$(P)$(R1)CH2:ENABLE PP")
     field(OUTB, "$(P)$(R2)CH2:ENABLE PP")
 }
+
+
+record(bo, "$(P)$(R)CH3:ENABLE")
+{
+    field(DESC, "Enable channel")
+    field(VAL, "1")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+    field(PINI, "YES")
+    field(FLNK, "$(P)$(R)CH3:ENABLE_FAN.PROC")
+}
+
+record(dfanout, "$(P)$(R)CH3:ENABLE_FAN")
+{
+    field(DOL, "$(P)$(R)CH3:ENABLE.VAL")
+    field(OMSL, "closed_loop")
+    field(OUTA, "$(P)$(R1)CH3:ENABLE PP")
+    field(OUTB, "$(P)$(R2)CH3:ENABLE PP")
+}
+
+record(bo, "$(P)$(R)CH4:ENABLE")
+{
+    field(DESC, "Enable channel")
+    field(VAL, "1")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+    field(PINI, "YES")
+    field(FLNK, "$(P)$(R)CH4:ENABLE_FAN.PROC")
+}
+
+record(dfanout, "$(P)$(R)CH4:ENABLE_FAN")
+{
+    field(DOL, "$(P)$(R)CH4:ENABLE.VAL")
+    field(OMSL, "closed_loop")
+    field(OUTA, "$(P)$(R1)CH4:ENABLE PP")
+    field(OUTB, "$(P)$(R2)CH4:ENABLE PP")
+}
+
+record(bo, "$(P)$(R)CH5:ENABLE")
+{
+    field(DESC, "Enable channel")
+    field(VAL, "1")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+    field(PINI, "YES")
+    field(FLNK, "$(P)$(R)CH5:ENABLE_FAN.PROC")
+}
+
+record(dfanout, "$(P)$(R)CH5:ENABLE_FAN")
+{
+    field(DOL, "$(P)$(R)CH5:ENABLE.VAL")
+    field(OMSL, "closed_loop")
+    field(OUTA, "$(P)$(R1)CH5:ENABLE PP")
+    field(OUTB, "$(P)$(R2)CH5:ENABLE PP")
+}
+
+record(bo, "$(P)$(R)CH6:ENABLE")
+{
+    field(DESC, "Enable channel")
+    field(VAL, "1")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+    field(PINI, "YES")
+    field(FLNK, "$(P)$(R)CH6:ENABLE_FAN.PROC")
+}
+
+record(dfanout, "$(P)$(R)CH6:ENABLE_FAN")
+{
+    field(DOL, "$(P)$(R)CH6:ENABLE.VAL")
+    field(OMSL, "closed_loop")
+    field(OUTA, "$(P)$(R1)CH6:ENABLE PP")
+    field(OUTB, "$(P)$(R2)CH6:ENABLE PP")
+}
+
+record(bo, "$(P)$(R)CH7:ENABLE")
+{
+    field(DESC, "Enable channel")
+    field(VAL, "1")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+    field(PINI, "YES")
+    field(FLNK, "$(P)$(R)CH7:ENABLE_FAN.PROC")
+}
+
+record(dfanout, "$(P)$(R)CH7:ENABLE_FAN")
+{
+    field(DOL, "$(P)$(R)CH7:ENABLE.VAL")
+    field(OMSL, "closed_loop")
+    field(OUTA, "$(P)$(R1)CH7:ENABLE PP")
+    field(OUTB, "$(P)$(R2)CH7:ENABLE PP")
+}
+
+record(bo, "$(P)$(R)CH8:ENABLE")
+{
+    field(DESC, "Enable channel")
+    field(VAL, "1")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+    field(PINI, "YES")
+    field(FLNK, "$(P)$(R)CH8:ENABLE_FAN.PROC")
+}
+
+record(dfanout, "$(P)$(R)CH8:ENABLE_FAN")
+{
+    field(DOL, "$(P)$(R)CH8:ENABLE.VAL")
+    field(OMSL, "closed_loop")
+    field(OUTA, "$(P)$(R1)CH8:ENABLE PP")
+    field(OUTB, "$(P)$(R2)CH8:ENABLE PP")
+}
