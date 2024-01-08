@@ -5,9 +5,9 @@ file {
 }
 display {
 	object {
-		x=2242
-		y=234
-		width=1000
+		x=2265
+		y=152
+		width=835
 		height=850
 	}
 	clr=1
@@ -89,7 +89,7 @@ display {
 }
 text {
 	object {
-		x=210
+		x=230
 		y=5
 		width=380
 		height=20
@@ -102,8 +102,8 @@ text {
 }
 "cartesian plot" {
 	object {
-		x=5
-		y=20
+		x=70
+		y=25
 		width=700
 		height=280
 	}
@@ -129,8 +129,8 @@ text {
 }
 "cartesian plot" {
 	object {
-		x=5
-		y=305
+		x=70
+		y=310
 		width=700
 		height=280
 	}
@@ -154,40 +154,10 @@ text {
 		rangeStyle="auto-scale"
 	}
 }
-"related display" {
-	object {
-		x=910
-		y=330
-		width=70
-		height=20
-	}
-	display[0] {
-		label="Plugin base"
-		name="NDPluginBase.adl"
-		args="P=$(P):,R=MASK:"
-	}
-	clr=14
-	bclr=55
-	label="-Plugin"
-}
-"choice button" {
-	object {
-		x=715
-		y=330
-		width=100
-		height=20
-	}
-	control {
-		chan="$(P):MASK:USE"
-		clr=14
-		bclr=3
-	}
-	stacking="column"
-}
 text {
 	object {
 		x=10
-		y=595
+		y=620
 		width=190
 		height=20
 	}
@@ -199,7 +169,7 @@ text {
 "choice button" {
 	object {
 		x=35
-		y=620
+		y=640
 		width=100
 		height=20
 	}
@@ -213,7 +183,7 @@ text {
 text {
 	object {
 		x=10
-		y=623
+		y=643
 		width=15
 		height=20
 	}
@@ -225,62 +195,8 @@ text {
 }
 text {
 	object {
-		x=715
-		y=25
-		width=190
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Apply channel masks"
-}
-text {
-	object {
-		x=715
-		y=310
-		width=190
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Apply channel masks"
-}
-"choice button" {
-	object {
-		x=715
-		y=45
-		width=100
-		height=20
-	}
-	control {
-		chan="$(P):MASKSUM:USE"
-		clr=14
-		bclr=3
-	}
-	stacking="column"
-}
-"related display" {
-	object {
-		x=910
-		y=45
-		width=70
-		height=20
-	}
-	display[0] {
-		label="Plugin base"
-		name="NDPluginBase.adl"
-		args="P=$(P):,R=MASKSUM:"
-	}
-	clr=14
-	bclr=55
-	label="-Plugin"
-}
-text {
-	object {
 		x=10
-		y=648
+		y=668
 		width=15
 		height=20
 	}
@@ -293,7 +209,7 @@ text {
 text {
 	object {
 		x=10
-		y=673
+		y=693
 		width=15
 		height=20
 	}
@@ -306,7 +222,7 @@ text {
 text {
 	object {
 		x=10
-		y=698
+		y=718
 		width=15
 		height=20
 	}
@@ -319,7 +235,7 @@ text {
 text {
 	object {
 		x=10
-		y=723
+		y=743
 		width=15
 		height=20
 	}
@@ -332,7 +248,7 @@ text {
 text {
 	object {
 		x=10
-		y=748
+		y=768
 		width=15
 		height=20
 	}
@@ -345,7 +261,7 @@ text {
 text {
 	object {
 		x=10
-		y=773
+		y=793
 		width=15
 		height=20
 	}
@@ -358,7 +274,7 @@ text {
 text {
 	object {
 		x=10
-		y=798
+		y=818
 		width=15
 		height=20
 	}
@@ -370,8 +286,8 @@ text {
 }
 text {
 	object {
-		x=180
-		y=623
+		x=175
+		y=643
 		width=15
 		height=20
 	}
@@ -383,8 +299,8 @@ text {
 }
 text {
 	object {
-		x=180
-		y=648
+		x=175
+		y=668
 		width=15
 		height=20
 	}
@@ -396,8 +312,8 @@ text {
 }
 text {
 	object {
-		x=180
-		y=673
+		x=175
+		y=693
 		width=15
 		height=20
 	}
@@ -409,8 +325,8 @@ text {
 }
 text {
 	object {
-		x=180
-		y=698
+		x=175
+		y=718
 		width=15
 		height=20
 	}
@@ -422,8 +338,8 @@ text {
 }
 text {
 	object {
-		x=180
-		y=723
+		x=175
+		y=743
 		width=15
 		height=20
 	}
@@ -435,8 +351,8 @@ text {
 }
 text {
 	object {
-		x=180
-		y=748
+		x=175
+		y=768
 		width=15
 		height=20
 	}
@@ -448,8 +364,8 @@ text {
 }
 text {
 	object {
-		x=180
-		y=773
+		x=175
+		y=793
 		width=15
 		height=20
 	}
@@ -461,8 +377,8 @@ text {
 }
 text {
 	object {
-		x=180
-		y=798
+		x=175
+		y=818
 		width=15
 		height=20
 	}
@@ -474,8 +390,8 @@ text {
 }
 text {
 	object {
-		x=350
-		y=623
+		x=340
+		y=643
 		width=15
 		height=20
 	}
@@ -487,8 +403,8 @@ text {
 }
 text {
 	object {
-		x=350
-		y=648
+		x=340
+		y=668
 		width=15
 		height=20
 	}
@@ -500,8 +416,8 @@ text {
 }
 text {
 	object {
-		x=350
-		y=673
+		x=340
+		y=693
 		width=15
 		height=20
 	}
@@ -513,8 +429,8 @@ text {
 }
 text {
 	object {
-		x=350
-		y=698
+		x=340
+		y=718
 		width=15
 		height=20
 	}
@@ -526,8 +442,8 @@ text {
 }
 text {
 	object {
-		x=350
-		y=723
+		x=340
+		y=743
 		width=15
 		height=20
 	}
@@ -539,8 +455,8 @@ text {
 }
 text {
 	object {
-		x=350
-		y=748
+		x=340
+		y=768
 		width=15
 		height=20
 	}
@@ -552,8 +468,8 @@ text {
 }
 text {
 	object {
-		x=350
-		y=773
+		x=340
+		y=793
 		width=15
 		height=20
 	}
@@ -565,8 +481,8 @@ text {
 }
 text {
 	object {
-		x=350
-		y=798
+		x=340
+		y=818
 		width=15
 		height=20
 	}
@@ -578,8 +494,8 @@ text {
 }
 text {
 	object {
-		x=520
-		y=623
+		x=500
+		y=643
 		width=15
 		height=20
 	}
@@ -591,8 +507,8 @@ text {
 }
 text {
 	object {
-		x=520
-		y=648
+		x=500
+		y=668
 		width=15
 		height=20
 	}
@@ -604,8 +520,8 @@ text {
 }
 text {
 	object {
-		x=520
-		y=673
+		x=500
+		y=693
 		width=15
 		height=20
 	}
@@ -617,8 +533,8 @@ text {
 }
 text {
 	object {
-		x=520
-		y=698
+		x=500
+		y=718
 		width=15
 		height=20
 	}
@@ -630,8 +546,8 @@ text {
 }
 text {
 	object {
-		x=520
-		y=723
+		x=500
+		y=743
 		width=15
 		height=20
 	}
@@ -643,8 +559,8 @@ text {
 }
 text {
 	object {
-		x=520
-		y=748
+		x=500
+		y=768
 		width=15
 		height=20
 	}
@@ -656,8 +572,8 @@ text {
 }
 text {
 	object {
-		x=520
-		y=773
+		x=500
+		y=793
 		width=15
 		height=20
 	}
@@ -669,8 +585,8 @@ text {
 }
 text {
 	object {
-		x=520
-		y=798
+		x=500
+		y=818
 		width=15
 		height=20
 	}
@@ -682,8 +598,8 @@ text {
 }
 "related display" {
 	object {
-		x=770
-		y=565
+		x=585
+		y=595
 		width=175
 		height=20
 	}
@@ -697,36 +613,8 @@ text {
 }
 byte {
 	object {
-		x=825
-		y=330
-		width=20
-		height=20
-	}
-	monitor {
-		chan="$(P):MASK:USE_RBV"
-		clr=60
-		bclr=19
-	}
-	sbit=0
-}
-byte {
-	object {
-		x=825
-		y=45
-		width=20
-		height=20
-	}
-	monitor {
-		chan="$(P):MASKSUM:USE_RBV"
-		clr=60
-		bclr=19
-	}
-	sbit=0
-}
-byte {
-	object {
 		x=145
-		y=620
+		y=640
 		width=20
 		height=20
 	}
@@ -739,8 +627,8 @@ byte {
 }
 text {
 	object {
-		x=690
-		y=623
+		x=660
+		y=643
 		width=15
 		height=20
 	}
@@ -752,8 +640,8 @@ text {
 }
 text {
 	object {
-		x=690
-		y=648
+		x=660
+		y=668
 		width=15
 		height=20
 	}
@@ -765,8 +653,8 @@ text {
 }
 text {
 	object {
-		x=690
-		y=673
+		x=660
+		y=693
 		width=15
 		height=20
 	}
@@ -778,8 +666,8 @@ text {
 }
 text {
 	object {
-		x=690
-		y=698
+		x=660
+		y=718
 		width=15
 		height=20
 	}
@@ -791,8 +679,8 @@ text {
 }
 text {
 	object {
-		x=690
-		y=723
+		x=660
+		y=743
 		width=15
 		height=20
 	}
@@ -804,8 +692,8 @@ text {
 }
 text {
 	object {
-		x=690
-		y=748
+		x=660
+		y=768
 		width=15
 		height=20
 	}
@@ -817,8 +705,8 @@ text {
 }
 text {
 	object {
-		x=690
-		y=773
+		x=660
+		y=793
 		width=15
 		height=20
 	}
@@ -830,8 +718,8 @@ text {
 }
 text {
 	object {
-		x=690
-		y=798
+		x=660
+		y=818
 		width=15
 		height=20
 	}
@@ -844,7 +732,7 @@ text {
 "choice button" {
 	object {
 		x=35
-		y=645
+		y=665
 		width=100
 		height=20
 	}
@@ -858,7 +746,7 @@ text {
 byte {
 	object {
 		x=145
-		y=645
+		y=665
 		width=20
 		height=20
 	}
@@ -872,7 +760,7 @@ byte {
 "choice button" {
 	object {
 		x=35
-		y=670
+		y=690
 		width=100
 		height=20
 	}
@@ -886,7 +774,7 @@ byte {
 byte {
 	object {
 		x=145
-		y=670
+		y=690
 		width=20
 		height=20
 	}
@@ -900,7 +788,7 @@ byte {
 "choice button" {
 	object {
 		x=35
-		y=695
+		y=715
 		width=100
 		height=20
 	}
@@ -914,7 +802,7 @@ byte {
 byte {
 	object {
 		x=145
-		y=695
+		y=715
 		width=20
 		height=20
 	}
@@ -928,7 +816,7 @@ byte {
 "choice button" {
 	object {
 		x=35
-		y=720
+		y=740
 		width=100
 		height=20
 	}
@@ -942,7 +830,7 @@ byte {
 byte {
 	object {
 		x=145
-		y=720
+		y=740
 		width=20
 		height=20
 	}
@@ -956,7 +844,7 @@ byte {
 "choice button" {
 	object {
 		x=35
-		y=745
+		y=765
 		width=100
 		height=20
 	}
@@ -970,7 +858,7 @@ byte {
 byte {
 	object {
 		x=145
-		y=745
+		y=765
 		width=20
 		height=20
 	}
@@ -984,7 +872,7 @@ byte {
 "choice button" {
 	object {
 		x=35
-		y=770
+		y=790
 		width=100
 		height=20
 	}
@@ -998,7 +886,7 @@ byte {
 byte {
 	object {
 		x=145
-		y=770
+		y=790
 		width=20
 		height=20
 	}
@@ -1012,7 +900,7 @@ byte {
 "choice button" {
 	object {
 		x=35
-		y=795
+		y=815
 		width=100
 		height=20
 	}
@@ -1026,7 +914,7 @@ byte {
 byte {
 	object {
 		x=145
-		y=795
+		y=815
 		width=20
 		height=20
 	}
@@ -1039,8 +927,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=205
-		y=620
+		x=200
+		y=640
 		width=100
 		height=20
 	}
@@ -1053,8 +941,8 @@ byte {
 }
 byte {
 	object {
-		x=315
-		y=620
+		x=310
+		y=640
 		width=20
 		height=20
 	}
@@ -1067,8 +955,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=205
-		y=645
+		x=200
+		y=665
 		width=100
 		height=20
 	}
@@ -1081,8 +969,8 @@ byte {
 }
 byte {
 	object {
-		x=315
-		y=645
+		x=310
+		y=665
 		width=20
 		height=20
 	}
@@ -1095,8 +983,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=205
-		y=670
+		x=200
+		y=690
 		width=100
 		height=20
 	}
@@ -1109,8 +997,8 @@ byte {
 }
 byte {
 	object {
-		x=315
-		y=670
+		x=310
+		y=690
 		width=20
 		height=20
 	}
@@ -1123,8 +1011,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=205
-		y=695
+		x=200
+		y=715
 		width=100
 		height=20
 	}
@@ -1137,8 +1025,8 @@ byte {
 }
 byte {
 	object {
-		x=315
-		y=695
+		x=310
+		y=715
 		width=20
 		height=20
 	}
@@ -1151,8 +1039,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=205
-		y=720
+		x=200
+		y=740
 		width=100
 		height=20
 	}
@@ -1165,8 +1053,8 @@ byte {
 }
 byte {
 	object {
-		x=315
-		y=720
+		x=310
+		y=740
 		width=20
 		height=20
 	}
@@ -1179,8 +1067,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=205
-		y=745
+		x=200
+		y=765
 		width=100
 		height=20
 	}
@@ -1193,8 +1081,8 @@ byte {
 }
 byte {
 	object {
-		x=315
-		y=745
+		x=310
+		y=765
 		width=20
 		height=20
 	}
@@ -1207,8 +1095,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=205
-		y=770
+		x=200
+		y=790
 		width=100
 		height=20
 	}
@@ -1221,8 +1109,8 @@ byte {
 }
 byte {
 	object {
-		x=315
-		y=770
+		x=310
+		y=790
 		width=20
 		height=20
 	}
@@ -1235,8 +1123,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=205
-		y=795
+		x=200
+		y=815
 		width=100
 		height=20
 	}
@@ -1249,8 +1137,8 @@ byte {
 }
 byte {
 	object {
-		x=315
-		y=795
+		x=310
+		y=815
 		width=20
 		height=20
 	}
@@ -1263,8 +1151,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=370
-		y=620
+		x=360
+		y=640
 		width=100
 		height=20
 	}
@@ -1277,8 +1165,8 @@ byte {
 }
 byte {
 	object {
-		x=480
-		y=620
+		x=470
+		y=640
 		width=20
 		height=20
 	}
@@ -1291,8 +1179,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=370
-		y=645
+		x=360
+		y=665
 		width=100
 		height=20
 	}
@@ -1305,8 +1193,8 @@ byte {
 }
 byte {
 	object {
-		x=480
-		y=645
+		x=470
+		y=665
 		width=20
 		height=20
 	}
@@ -1319,8 +1207,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=370
-		y=670
+		x=360
+		y=690
 		width=100
 		height=20
 	}
@@ -1333,8 +1221,8 @@ byte {
 }
 byte {
 	object {
-		x=480
-		y=670
+		x=470
+		y=690
 		width=20
 		height=20
 	}
@@ -1347,8 +1235,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=370
-		y=695
+		x=360
+		y=715
 		width=100
 		height=20
 	}
@@ -1361,8 +1249,8 @@ byte {
 }
 byte {
 	object {
-		x=480
-		y=695
+		x=470
+		y=715
 		width=20
 		height=20
 	}
@@ -1375,8 +1263,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=370
-		y=720
+		x=360
+		y=740
 		width=100
 		height=20
 	}
@@ -1389,8 +1277,8 @@ byte {
 }
 byte {
 	object {
-		x=480
-		y=720
+		x=470
+		y=740
 		width=20
 		height=20
 	}
@@ -1403,8 +1291,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=370
-		y=745
+		x=360
+		y=765
 		width=100
 		height=20
 	}
@@ -1417,8 +1305,8 @@ byte {
 }
 byte {
 	object {
-		x=480
-		y=745
+		x=470
+		y=765
 		width=20
 		height=20
 	}
@@ -1431,8 +1319,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=370
-		y=770
+		x=360
+		y=790
 		width=100
 		height=20
 	}
@@ -1445,8 +1333,8 @@ byte {
 }
 byte {
 	object {
-		x=480
-		y=770
+		x=470
+		y=790
 		width=20
 		height=20
 	}
@@ -1459,8 +1347,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=370
-		y=795
+		x=360
+		y=815
 		width=100
 		height=20
 	}
@@ -1473,8 +1361,8 @@ byte {
 }
 byte {
 	object {
-		x=480
-		y=795
+		x=470
+		y=815
 		width=20
 		height=20
 	}
@@ -1487,8 +1375,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=545
-		y=620
+		x=525
+		y=640
 		width=100
 		height=20
 	}
@@ -1501,8 +1389,8 @@ byte {
 }
 byte {
 	object {
-		x=655
-		y=620
+		x=635
+		y=640
 		width=20
 		height=20
 	}
@@ -1515,8 +1403,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=545
-		y=645
+		x=525
+		y=665
 		width=100
 		height=20
 	}
@@ -1529,8 +1417,8 @@ byte {
 }
 byte {
 	object {
-		x=655
-		y=645
+		x=635
+		y=665
 		width=20
 		height=20
 	}
@@ -1543,8 +1431,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=545
-		y=670
+		x=525
+		y=690
 		width=100
 		height=20
 	}
@@ -1557,8 +1445,8 @@ byte {
 }
 byte {
 	object {
-		x=655
-		y=670
+		x=635
+		y=690
 		width=20
 		height=20
 	}
@@ -1571,8 +1459,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=545
-		y=695
+		x=525
+		y=715
 		width=100
 		height=20
 	}
@@ -1585,8 +1473,8 @@ byte {
 }
 byte {
 	object {
-		x=655
-		y=695
+		x=635
+		y=715
 		width=20
 		height=20
 	}
@@ -1599,8 +1487,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=545
-		y=720
+		x=525
+		y=740
 		width=100
 		height=20
 	}
@@ -1613,8 +1501,8 @@ byte {
 }
 byte {
 	object {
-		x=655
-		y=720
+		x=635
+		y=740
 		width=20
 		height=20
 	}
@@ -1627,8 +1515,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=545
-		y=745
+		x=525
+		y=765
 		width=100
 		height=20
 	}
@@ -1641,8 +1529,8 @@ byte {
 }
 byte {
 	object {
-		x=655
-		y=745
+		x=635
+		y=765
 		width=20
 		height=20
 	}
@@ -1655,8 +1543,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=545
-		y=770
+		x=525
+		y=790
 		width=100
 		height=20
 	}
@@ -1669,8 +1557,8 @@ byte {
 }
 byte {
 	object {
-		x=655
-		y=770
+		x=635
+		y=790
 		width=20
 		height=20
 	}
@@ -1683,8 +1571,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=545
-		y=795
+		x=525
+		y=815
 		width=100
 		height=20
 	}
@@ -1697,8 +1585,8 @@ byte {
 }
 byte {
 	object {
-		x=655
-		y=795
+		x=635
+		y=815
 		width=20
 		height=20
 	}
@@ -1711,8 +1599,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=715
-		y=620
+		x=685
+		y=640
 		width=100
 		height=20
 	}
@@ -1725,8 +1613,8 @@ byte {
 }
 byte {
 	object {
-		x=825
-		y=620
+		x=795
+		y=640
 		width=20
 		height=20
 	}
@@ -1739,8 +1627,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=715
-		y=645
+		x=685
+		y=665
 		width=100
 		height=20
 	}
@@ -1753,8 +1641,8 @@ byte {
 }
 byte {
 	object {
-		x=825
-		y=645
+		x=795
+		y=665
 		width=20
 		height=20
 	}
@@ -1767,8 +1655,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=715
-		y=670
+		x=685
+		y=690
 		width=100
 		height=20
 	}
@@ -1781,8 +1669,8 @@ byte {
 }
 byte {
 	object {
-		x=825
-		y=670
+		x=795
+		y=690
 		width=20
 		height=20
 	}
@@ -1795,8 +1683,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=715
-		y=695
+		x=685
+		y=715
 		width=100
 		height=20
 	}
@@ -1809,8 +1697,8 @@ byte {
 }
 byte {
 	object {
-		x=825
-		y=695
+		x=795
+		y=715
 		width=20
 		height=20
 	}
@@ -1823,8 +1711,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=715
-		y=720
+		x=685
+		y=740
 		width=100
 		height=20
 	}
@@ -1837,8 +1725,8 @@ byte {
 }
 byte {
 	object {
-		x=825
-		y=720
+		x=795
+		y=740
 		width=20
 		height=20
 	}
@@ -1851,8 +1739,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=715
-		y=745
+		x=685
+		y=765
 		width=100
 		height=20
 	}
@@ -1865,8 +1753,8 @@ byte {
 }
 byte {
 	object {
-		x=825
-		y=745
+		x=795
+		y=765
 		width=20
 		height=20
 	}
@@ -1879,8 +1767,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=715
-		y=770
+		x=685
+		y=790
 		width=100
 		height=20
 	}
@@ -1893,8 +1781,8 @@ byte {
 }
 byte {
 	object {
-		x=825
-		y=770
+		x=795
+		y=790
 		width=20
 		height=20
 	}
@@ -1907,8 +1795,8 @@ byte {
 }
 "choice button" {
 	object {
-		x=715
-		y=795
+		x=685
+		y=815
 		width=100
 		height=20
 	}
@@ -1921,8 +1809,8 @@ byte {
 }
 byte {
 	object {
-		x=825
-		y=795
+		x=795
+		y=815
 		width=20
 		height=20
 	}
@@ -1932,4 +1820,76 @@ byte {
 		bclr=19
 	}
 	sbit=0
+}
+"choice button" {
+	object {
+		x=170
+		y=595
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:USE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=280
+		y=595
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:USE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"related display" {
+	object {
+		x=310
+		y=595
+		width=120
+		height=20
+	}
+	display[0] {
+		label="Plugin base"
+		name="NDPluginBase.adl"
+		args="P=$(P):,R=MASKSUM:"
+	}
+	clr=14
+	bclr=55
+	label="-Single mask plugin"
+}
+text {
+	object {
+		x=75
+		y=598
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Enable masking"
+}
+"related display" {
+	object {
+		x=440
+		y=595
+		width=120
+		height=20
+	}
+	display[0] {
+		label="Plugin base"
+		name="NDPluginBase.adl"
+		args="P=$(P):,R=MASK:"
+	}
+	clr=14
+	bclr=55
+	label="-Summed mask plugin"
 }

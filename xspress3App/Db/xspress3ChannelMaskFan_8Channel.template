@@ -1,14 +1,12 @@
 #######################################################
-# Channel mask plugin fan out template
+# Channel mask plugin fan out template for 8 channels
 # Ben Bradnick
 # December 2023
 #
 # This template is used to create dfanout records to
-# control enabling and disabling each channel for both
-# the single frame channel mask plugin and the
-# accumulation channel mask plugin.
-#
-# It creates records for 8 channels
+# control multiple channel mask plugins:
+#  - enabling and disabling the overall masking
+#  - enabling and disabling each channel
 #
 # Macros:
 # % macro,  P,            Plugin PV prefix (common to both)
@@ -17,6 +15,24 @@
 # % macro,  R2,           Second plugin PV suffix
 #
 #######################################################
+
+record(bo, "$(P)$(R):USE")
+{
+    field(DESC, "Enable masking")
+    field(VAL, "0")
+    field(ONAM, "On")
+    field(ZNAM, "Off")
+    field(PINI, "YES")
+    field(FLNK, "$(P)$(R):USE_FAN.PROC")
+}
+
+record(dfanout, "$(P)$(R):USE_FAN")
+{
+    field(DOL, "$(P)$(R)CH1:ENABLE.VAL")
+    field(OMSL, "closed_loop")
+    field(OUTA, "$(P)$(R1):USE PP")
+    field(OUTB, "$(P)$(R2):USE PP")
+}
 
 record(bo, "$(P)$(R)CH1:ENABLE")
 {
