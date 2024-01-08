@@ -79,8 +79,6 @@ XspressChannelMaskPlugin::XspressChannelMaskPlugin(
  */
 void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
 {
-    // TODO: check if we need to check for NDArrayCallbacks before doing anything
-
     /* Call the base class method */
     NDPluginDriver::beginProcessCallbacks(pArray);
 
@@ -111,11 +109,8 @@ void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
         NDPluginDriver::endProcessCallbacks(pArrayCopy, false, true);
 
     }
-    else
-    {
-        // No mask applied - publish original array
-        NDPluginDriver::endProcessCallbacks(pArray, true, true);
-    }
+    // No mask applied - publish original array
+    else NDPluginDriver::endProcessCallbacks(pArray, true, true);
 }
 
 
@@ -137,7 +132,6 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
     if (param == NDPluginUseMask)
     {
         pluginParam = true;
-        printf("%s: use mask = %d\n", driverName, value);
         status = (asynStatus) setIntegerParam(param, value);
         callParamCallbacks();
     }
@@ -148,7 +142,6 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
             if (param == channelMaskParams[channel])
             {
                 pluginParam = true;
-                printf("%s: channel %d enable: %d\n", driverName, channel+1, value);
                 status = (asynStatus) setIntegerParam(param, value);
 
                 // Set the mask state
@@ -184,21 +177,25 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
  */
 void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
 {
-    printf("%s: applying mask to array\n", driverName);
-    printf(
-        "%s: dims: %d, x size: %lu, y size: %lu\n",
-        driverName,
-        pArray->ndims,
-        pArray->dims[0].size,
-        pArray->dims[1].size
-    );
+    // Sanity check on array dimensions
+    unsigned int yDimension = (unsigned int)dims[0].size;
+    if (yDimension != channelMasked.size())
+    {
+        // TODO: replace printf with asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR, "", *args)
+        printf(
+            "%s: expected Y dimension of size %lu, got %lu (skipping mask)\n",
+            driverName,
+            channelMasked.size(),
+            yDimension
+        );
+        return;
+    }
 
     // Check each channel to see if it is masked
     for (unsigned int channelIndex = 0; channelIndex < channelMasked.size(); channelIndex++)
     {
         if (channelMasked[channelIndex] == true)
         {
-            printf("%s: masking channel %d\n", driverName, channelIndex+1);
             switch(pArray->dataType) {
                 case NDInt8:
                     setChannelValuesToZeroT<epicsInt8>(pArray, channelIndex);
@@ -231,12 +228,12 @@ void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
                     setChannelValuesToZeroT<epicsFloat64>(pArray, channelIndex);
                     break;
                 default:
+                    // TODO: replace printf with asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR, "", *args)
                     printf("%s: unsupported data type: %d\n", driverName, pArray->dataType);
                     break;
                 break;
             }
         }
-        else printf("%s: NOT masking channel %d\n", driverName, channelIndex+1);
     }
 }
 

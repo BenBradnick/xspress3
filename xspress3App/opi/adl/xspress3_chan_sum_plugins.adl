@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=2242
-		y=483
+		x=2232
+		y=475
 		width=940
 		height=200
 	}
@@ -108,25 +108,24 @@ text {
 	"basic attribute" {
 		clr=54
 	}
-	textix="Xspress3 Plugins for $(P) Channel $(R)"
+	textix="Xspress3 Channel mask downstream plugins"
 	align="horiz. centered"
 }
 text {
 	object {
 		x=10
 		y=40
-		width=110
+		width=80
 		height=20
 	}
 	"basic attribute" {
 		clr=14
 	}
 	textix="Plugin name"
-	align="horiz. right"
 }
 text {
 	object {
-		x=150
+		x=125
 		y=40
 		width=110
 		height=20
@@ -135,11 +134,10 @@ text {
 		clr=14
 	}
 	textix="Plugin type"
-	align="horiz. right"
 }
 "text update" {
 	object {
-		x=40
+		x=10
 		y=60
 		width=110
 		height=18
@@ -149,14 +147,13 @@ text {
 		clr=54
 		bclr=4
 	}
-	align="horiz. centered"
 	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=155
+		x=125
 		y=60
 		width=120
 		height=18
@@ -166,14 +163,13 @@ text {
 		clr=54
 		bclr=4
 	}
-	align="horiz. centered"
 	format="string"
 	limits {
 	}
 }
 text {
 	object {
-		x=300
+		x=250
 		y=40
 		width=40
 		height=20
@@ -182,11 +178,10 @@ text {
 		clr=14
 	}
 	textix="Port"
-	align="horiz. right"
 }
 text {
 	object {
-		x=407
+		x=410
 		y=40
 		width=60
 		height=20
@@ -195,7 +190,6 @@ text {
 		clr=14
 	}
 	textix="Enable"
-	align="horiz. right"
 }
 text {
 	object {
@@ -208,13 +202,12 @@ text {
 		clr=14
 	}
 	textix="Blocking"
-	align="horiz. right"
 }
 "text entry" {
 	object {
-		x=290
-		y=61
-		width=60
+		x=250
+		y=60
+		width=90
 		height=20
 	}
 	control {
@@ -227,7 +220,7 @@ text {
 }
 menu {
 	object {
-		x=355
+		x=350
 		y=61
 		width=80
 		height=20
@@ -240,7 +233,7 @@ menu {
 }
 "text update" {
 	object {
-		x=440
+		x=435
 		y=61
 		width=80
 		height=18
@@ -270,7 +263,7 @@ menu {
 }
 text {
 	object {
-		x=800
+		x=780
 		y=40
 		width=40
 		height=20
@@ -279,7 +272,6 @@ text {
 		clr=14
 	}
 	textix="Rate"
-	align="horiz. right"
 }
 "related display" {
 	object {
@@ -300,7 +292,7 @@ text {
 "text update" {
 	object {
 		x=780
-		y=61
+		y=60
 		width=80
 		height=18
 	}
@@ -315,7 +307,7 @@ text {
 }
 text {
 	object {
-		x=615
+		x=610
 		y=40
 		width=70
 		height=20
@@ -324,12 +316,11 @@ text {
 		clr=14
 	}
 	textix="Dropped"
-	align="horiz. right"
 }
 "text update" {
 	object {
 		x=610
-		y=61
+		y=60
 		width=80
 		height=18
 	}
@@ -338,13 +329,12 @@ text {
 		clr=54
 		bclr=4
 	}
-	align="horiz. centered"
 	limits {
 	}
 }
 text {
 	object {
-		x=700
+		x=695
 		y=40
 		width=70
 		height=20
@@ -353,12 +343,11 @@ text {
 		clr=14
 	}
 	textix="Free"
-	align="horiz. right"
 }
 "text update" {
 	object {
 		x=695
-		y=61
+		y=60
 		width=80
 		height=18
 	}
@@ -374,8 +363,8 @@ text {
 }
 "text update" {
 	object {
-		x=40
-		y=89
+		x=10
+		y=90
 		width=110
 		height=18
 	}
@@ -384,15 +373,14 @@ text {
 		clr=54
 		bclr=4
 	}
-	align="horiz. centered"
 	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=155
-		y=89
+		x=125
+		y=90
 		width=120
 		height=18
 	}
@@ -401,16 +389,15 @@ text {
 		clr=54
 		bclr=4
 	}
-	align="horiz. centered"
 	format="string"
 	limits {
 	}
 }
 "text entry" {
 	object {
-		x=290
+		x=250
 		y=90
-		width=60
+		width=90
 		height=20
 	}
 	control {
@@ -423,7 +410,7 @@ text {
 }
 menu {
 	object {
-		x=355
+		x=350
 		y=90
 		width=80
 		height=20
@@ -436,7 +423,7 @@ menu {
 }
 "text update" {
 	object {
-		x=440
+		x=435
 		y=90
 		width=80
 		height=18
@@ -508,7 +495,6 @@ menu {
 		clr=54
 		bclr=4
 	}
-	align="horiz. centered"
 	limits {
 	}
 }
@@ -531,7 +517,7 @@ menu {
 }
 "text update" {
 	object {
-		x=40
+		x=10
 		y=120
 		width=110
 		height=18
@@ -541,14 +527,13 @@ menu {
 		clr=54
 		bclr=4
 	}
-	align="horiz. centered"
 	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=155
+		x=125
 		y=120
 		width=120
 		height=18
@@ -558,16 +543,15 @@ menu {
 		clr=54
 		bclr=4
 	}
-	align="horiz. centered"
 	format="string"
 	limits {
 	}
 }
 "text entry" {
 	object {
-		x=290
-		y=121
-		width=60
+		x=250
+		y=120
+		width=90
 		height=20
 	}
 	control {
@@ -580,8 +564,8 @@ menu {
 }
 menu {
 	object {
-		x=355
-		y=121
+		x=350
+		y=120
 		width=80
 		height=20
 	}
@@ -593,8 +577,8 @@ menu {
 }
 "text update" {
 	object {
-		x=440
-		y=121
+		x=435
+		y=120
 		width=80
 		height=18
 	}
@@ -624,7 +608,7 @@ menu {
 "text update" {
 	object {
 		x=610
-		y=121
+		y=120
 		width=80
 		height=18
 	}
@@ -633,14 +617,13 @@ menu {
 		clr=54
 		bclr=4
 	}
-	align="horiz. centered"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=695
-		y=121
+		y=120
 		width=80
 		height=18
 	}
@@ -657,7 +640,7 @@ menu {
 "text update" {
 	object {
 		x=780
-		y=121
+		y=120
 		width=80
 		height=18
 	}
@@ -688,7 +671,7 @@ menu {
 }
 "text update" {
 	object {
-		x=40
+		x=10
 		y=150
 		width=110
 		height=18
@@ -698,14 +681,13 @@ menu {
 		clr=54
 		bclr=4
 	}
-	align="horiz. centered"
 	format="string"
 	limits {
 	}
 }
 "text update" {
 	object {
-		x=155
+		x=125
 		y=150
 		width=120
 		height=18
@@ -715,16 +697,15 @@ menu {
 		clr=54
 		bclr=4
 	}
-	align="horiz. centered"
 	format="string"
 	limits {
 	}
 }
 "text entry" {
 	object {
-		x=290
-		y=151
-		width=60
+		x=250
+		y=150
+		width=90
 		height=20
 	}
 	control {
@@ -737,8 +718,8 @@ menu {
 }
 menu {
 	object {
-		x=355
-		y=151
+		x=350
+		y=150
 		width=80
 		height=20
 	}
@@ -750,8 +731,8 @@ menu {
 }
 "text update" {
 	object {
-		x=440
-		y=151
+		x=435
+		y=150
 		width=80
 		height=18
 	}
@@ -781,7 +762,7 @@ menu {
 "text update" {
 	object {
 		x=610
-		y=151
+		y=150
 		width=80
 		height=18
 	}
@@ -790,14 +771,13 @@ menu {
 		clr=54
 		bclr=4
 	}
-	align="horiz. centered"
 	limits {
 	}
 }
 "text update" {
 	object {
 		x=695
-		y=151
+		y=150
 		width=80
 		height=18
 	}
@@ -814,7 +794,7 @@ menu {
 "text update" {
 	object {
 		x=780
-		y=151
+		y=150
 		width=80
 		height=18
 	}
