@@ -20,7 +20,7 @@
 
 record(bo, "$(P)$(R)CH1:ENABLE")
 {
-    field(DESC, "Enable channel)
+    field(DESC, "Enable channel")
     field(VAL, "1")
     field(ONAM, "Enabled")
     field(ZNAM, "Disabled")
