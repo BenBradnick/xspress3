@@ -1,12 +1,12 @@
 
 file {
-	name="/home/ben/development/xspress3/xspress3App/opi/adl/xspress3_mcasumrois.adl"
+	name="/home/ben/epics/modules/xspress3/xspress3App/opi/adl/xspress3_mcasumrois.adl"
 	version=030118
 }
 display {
 	object {
-		x=3340
-		y=204
+		x=763
+		y=87
 		width=1000
 		height=850
 	}
@@ -1705,5 +1705,5 @@ text {
 	}
 	clr=14
 	bclr=55
-	label="-ROI plugins"
+	label="-Upstream plugins"
 }
