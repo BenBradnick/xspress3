@@ -221,7 +221,8 @@ void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
                     setChannelValuesToZeroT<epicsFloat64>(pArray, channelIndex);
                     break;
                 default:
-                    else printf("%s: unsupported data type: %d\n", driverName, pArray->dataType);
+                    printf("%s: unsupported data type: %d\n", driverName, pArray->dataType);
+                    break;
                 break;
             }
         }
