@@ -100,9 +100,10 @@ void XspressChannelMaskPlugin::processCallbacks(NDArray *pArray)
         this->unlock();
 
         // Apply the channel masks
-        std::lock(maskVectorMutex);
-        applyMask(pArrayCopy);
-        maskVectorMutex.unlock();
+        {
+            const std::lock_guard<std::mutex> lock(maskVectorMutex);
+            applyMask(pArrayCopy);
+        }
 
         this->lock();
 
@@ -152,7 +153,7 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
 
                 // Set the mask state
                 {
-                    std::lock(maskVectorMutex);
+                    const std::lock_guard<std::mutex> lock(maskVectorMutex);
                     channelMasked[channel] = (value == 1) ? false : true;
                 }
 
