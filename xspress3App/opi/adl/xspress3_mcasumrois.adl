@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=763
-		y=87
+		x=2399
+		y=119
 		width=1000
 		height=850
 	}
@@ -152,23 +152,6 @@ text {
 	}
 	y1_axis {
 		rangeStyle="auto-scale"
-	}
-}
-"text update" {
-	object {
-		x=825
-		y=330
-		width=70
-		height=20
-	}
-	monitor {
-		chan="$(P):det1:MASK:USE_RBV"
-		clr=54
-		bclr=0
-	}
-	align="horiz. right"
-	format="string"
-	limits {
 	}
 }
 "related display" {
@@ -1706,4 +1689,18 @@ text {
 	clr=14
 	bclr=55
 	label="-Upstream plugins"
+}
+byte {
+	object {
+		x=825
+		y=330
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):det1:MASK:USE_RBV"
+		clr=15
+		bclr=19
+	}
+	sbit=0
 }
