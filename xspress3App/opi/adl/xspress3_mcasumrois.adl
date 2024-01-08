@@ -164,7 +164,7 @@ text {
 	display[0] {
 		label="Plugin base"
 		name="NDPluginBase.adl"
-		args="P=$(P):,R=det1:MASK:"
+		args="P=$(P):,R=MASK:"
 	}
 	clr=14
 	bclr=55
@@ -178,7 +178,7 @@ text {
 		height=20
 	}
 	control {
-		chan="$(P):det1:MASK:USE"
+		chan="$(P):MASK:USE"
 		clr=14
 		bclr=3
 	}
@@ -204,7 +204,7 @@ text {
 		height=20
 	}
 	control {
-		chan="$(P):det1:MASK:FAN:CH1:ENABLE"
+		chan="$(P):MASK:FAN:CH1:ENABLE"
 		clr=14
 		bclr=3
 	}
@@ -255,7 +255,7 @@ text {
 		height=20
 	}
 	control {
-		chan="$(P):det1:MASKSUM:USE"
+		chan="$(P):MASKSUM:USE"
 		clr=14
 		bclr=3
 	}
@@ -271,7 +271,7 @@ text {
 	display[0] {
 		label="Plugin base"
 		name="NDPluginBase.adl"
-		args="P=$(P):,R=det1:MASKSUM:"
+		args="P=$(P):,R=MASKSUM:"
 	}
 	clr=14
 	bclr=55
@@ -1137,7 +1137,7 @@ byte {
 		height=20
 	}
 	monitor {
-		chan="$(P):det1:MASK:USE_RBV"
+		chan="$(P):MASK:USE_RBV"
 		clr=60
 		bclr=19
 	}
@@ -1151,7 +1151,7 @@ byte {
 		height=20
 	}
 	monitor {
-		chan="$(P):det1:MASKSUM:USE_RBV"
+		chan="$(P):MASKSUM:USE_RBV"
 		clr=60
 		bclr=19
 	}
@@ -1165,7 +1165,7 @@ byte {
 		height=20
 	}
 	monitor {
-		chan="$(P):det1:MASK:FAN:CH1:ENABLE"
+		chan="$(P):MASK:FAN:CH1:ENABLE"
 		clr=60
 		bclr=19
 	}

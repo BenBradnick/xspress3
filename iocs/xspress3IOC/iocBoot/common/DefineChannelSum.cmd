@@ -12,8 +12,8 @@ epicsEnvSet("CHM1",   "ALL")
 
 # Channel mask plugin to mask individual channels (set them to zero)
 XspressChannelMaskConfigure("$(PORT).CHANMASK", "$(NUM_CHANNELS)", "$(QSIZE)", 0, "XSP3", 0, 0, 0, 0, 0, 1)
-dbLoadRecords("xspress3ChannelMask.template", "P=$(PREFIX), R=det1:MASK:, PORT=$(PORT).CHANMASK, NDARRAY_PORT=$(PORT)")
-dbLoadRecords("xspress3ChannelMask_$(NUM_CHANNELS)Channel.template", "P=$(PREFIX), R=det1:MASK:, PORT=$(PORT).CHANMASK")
+dbLoadRecords("xspress3ChannelMask.template", "P=$(PREFIX), R=MASK:, PORT=$(PORT).CHANMASK, NDARRAY_PORT=$(PORT)")
+dbLoadRecords("xspress3ChannelMask_$(NUM_CHANNELS)Channel.template", "P=$(PREFIX), R=MASK:, PORT=$(PORT).CHANMASK")
 
 # ROI plugin to sum across all (non-zero) channels
 NDROIConfigure("CHAN$(CHAN)", "$(QSIZE)", 0, "$(PORT).CHANMASK", 0, -1, -1)
@@ -28,8 +28,8 @@ dbLoadRecords("$(ADCORE)/db/NDStdArrays.template", "P=$(PREFIX),R=MCA$(CHAN):,PO
 
 # Channel mask plugin to mask individual channels (set them to zero)
 XspressChannelMaskConfigure("$(PORT)SUM.CHANMASK", "$(NUM_CHANNELS)", "$(QSIZE)", 0, "PROC1", 0, 0, 0, 0, 0, 1)
-dbLoadRecords("xspress3ChannelMask.template", "P=$(PREFIX), R=det1:MASKSUM:, PORT=$(PORT)SUM.CHANMASK, NDARRAY_PORT=PROC1")
-dbLoadRecords("xspress3ChannelMask_$(NUM_CHANNELS)Channel.template", "P=$(PREFIX), R=det1:MASKSUM:, PORT=$(PORT)SUM.CHANMASK")
+dbLoadRecords("xspress3ChannelMask.template", "P=$(PREFIX), R=MASKSUM:, PORT=$(PORT)SUM.CHANMASK, NDARRAY_PORT=PROC1")
+dbLoadRecords("xspress3ChannelMask_$(NUM_CHANNELS)Channel.template", "P=$(PREFIX), R=MASKSUM:, PORT=$(PORT)SUM.CHANMASK")
 
 # ROI plugin to sum across all (non-zero) channels
 NDROIConfigure("CHANSUM$(CHAN)", "$(QSIZE)", 0, "$(PORT)SUM.CHANMASK", 0, -1, -1)
@@ -41,7 +41,7 @@ dbLoadRecords("$(ADCORE)/db/NDStdArrays.template", "P=$(PREFIX),R=MCASUM$(CHAN):
 
 
 # Fan out template to enable/disable channels for both Mask plugin instances
-dbLoadRecords("xspress3ChannelMaskFan_$(NUM_CHANNELS)Channel.template", "P=$(PREFIX), R=MASK:FAN:, R1=det1:MASK:, R2=R=det1:MASKSUM:")
+dbLoadRecords("xspress3ChannelMaskFan_$(NUM_CHANNELS)Channel.template", "P=$(PREFIX), R=MASK:FAN:, R1=MASK:, R2=MASKSUM:")
 
 ###############################################################################
 
