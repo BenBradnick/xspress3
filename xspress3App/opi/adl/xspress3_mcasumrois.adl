@@ -693,7 +693,7 @@ text {
 	}
 	clr=14
 	bclr=55
-	label="-Upstream plugins"
+	label="-Downstream plugins"
 }
 byte {
 	object {
