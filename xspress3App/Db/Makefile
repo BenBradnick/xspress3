@@ -32,6 +32,7 @@ DB += xspress3_pluginControl.template
 DB += xspress3_header.template
 
 DB += xspress3ChannelMask.template
+DB += xspress3ChannelMaskFan_8Channel.template
 DB += xspress3ChannelMask_8Channel.template
 
 include $(TOP)/configure/RULES

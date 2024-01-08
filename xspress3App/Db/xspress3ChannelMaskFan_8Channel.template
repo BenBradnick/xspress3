@@ -1,0 +1,55 @@
+#######################################################
+# Channel mask plugin fan out template
+# Ben Bradnick
+# December 2023
+#
+# This template is used to create dfanout records to
+# control enabling and disabling each channel for both
+# the single frame channel mask plugin and the
+# accumulation channel mask plugin.
+#
+# It creates records for 8 channels
+#
+# Macros:
+# % macro,  P,            Plugin PV prefix (common to both)
+# % macro,  R,            Fanout template PV suffix
+# % macro,  R1,           First plugin PV suffix
+# % macro,  R2,           Second plugin PV suffix
+#
+#######################################################
+
+record(bo, "$(P)$(R)CH1:ENABLE")
+{
+    field(DESC, "Enable channel)
+    field(VAL, "1")
+    field(ONAM, "Enabled")
+    field(ZNAM, "Disabled")
+    field(PINI, "YES")
+    field(FLNK, "$(P)$(R)CH1:ENABLE_FAN.PROC")
+}
+
+record(dfanout, "$(P)$(R)CH1:ENABLE_FAN")
+{
+    field(DOL, "$(P)$(R)CH1:ENABLE.VAL")
+    field(OMSL, "closed_loop")
+    field(OUTA, "$(P)$(R1)CH1:ENABLE PP")
+    field(OUTA, "$(P)$(R2)CH1:ENABLE PP")
+}
+
+record(bo, "$(P)$(R)CH2:ENABLE")
+{
+    field(DESC, "Enable channel")
+    field(VAL, "1")
+    field(ONAM, "Enabled")
+    field(ZNAM, "Disabled")
+    field(PINI, "YES")
+    field(FLNK, "$(P)$(R)CH2:ENABLE_FAN.PROC")
+}
+
+record(dfanout, "$(P)$(R)CH2:ENABLE_FAN")
+{
+    field(DOL, "$(P)$(R)CH2:ENABLE.VAL")
+    field(OMSL, "closed_loop")
+    field(OUTA, "$(P)$(R1)CH2:ENABLE PP")
+    field(OUTA, "$(P)$(R2)CH2:ENABLE PP")
+}

@@ -40,5 +40,8 @@ NDStdArraysConfigure("MCASUM$(CHAN)", 5, 0, "CHANSUM$(CHAN)", 0, 0)
 dbLoadRecords("$(ADCORE)/db/NDStdArrays.template", "P=$(PREFIX),R=MCASUM$(CHAN):,PORT=MCASUM$(CHAN),ADDR=0,TIMEOUT=1,NDARRAY_PORT=CHANSUM$(CHAN),TYPE=Float64,FTVL=DOUBLE,NELEMENTS=$(NUM_BINS)")
 
 
+# Fan out template to enable/disable channels for both Mask plugin instances
+dbLoadRecords("xspress3ChannelMaskFan_$(NUM_CHANNELS)Channel.template", "P=$(PREFIX), R=MASK:FAN:, R1=det1:MASK:, R2=R=det1:MASKSUM:")
+
 ###############################################################################
 
