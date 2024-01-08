@@ -144,6 +144,7 @@ asynStatus XspressChannelMaskPlugin::writeInt32(asynUser *pasynUser, epicsInt32 
                 status = (asynStatus) setIntegerParam(param, value);
 
                 // Set the mask state
+                // TODO: make thread safe with a lock
                 channelMasked[channel] = (value == 1) ? false : true;
 
                 callParamCallbacks();
@@ -182,15 +183,67 @@ void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
         pArray->dims[1].size
     );
 
-    // TODO: implement function
-    // See doComputeHistogram and doComputeHistogramT from NDPluginStats to get type working. 
+    // Check each channel to see if it is masked
     for (unsigned int channelIndex = 0; channelIndex < channelMasked.size(); channelIndex++)
     {
         if (channelMasked[channelIndex] == true)
         {
             printf("%s: masking channel %d\n", driverName, channelIndex+1);
+            switch(pArray->dataType) {
+                case NDInt8:
+                    setChannelValuesToZeroT<epicsInt8>(pArray, channelIndex);
+                    break;
+                case NDUInt8:
+                    setChannelValuesToZeroT<epicsUInt8>(pArray, channelIndex);
+                    break;
+                case NDInt16:
+                    setChannelValuesToZeroT<epicsInt16>(pArray, channelIndex);
+                    break;
+                case NDUInt16:
+                    setChannelValuesToZeroT<epicsUInt16>(pArray, channelIndex);
+                    break;
+                case NDInt32:
+                    setChannelValuesToZeroT<epicsInt32>(pArray, channelIndex);
+                    break;
+                case NDUInt32:
+                    setChannelValuesToZeroT<epicsUInt32>(pArray, channelIndex);
+                    break;
+                case NDInt64:
+                    setChannelValuesToZeroT<epicsInt64>(pArray, channelIndex);
+                    break;
+                case NDUInt64:
+                    setChannelValuesToZeroT<epicsUInt64>(pArray, channelIndex);
+                    break;
+                case NDFloat32:
+                    setChannelValuesToZeroT<epicsFloat32>(pArray, channelIndex);
+                    break;
+                case NDFloat64:
+                    setChannelValuesToZeroT<epicsFloat64>(pArray, channelIndex);
+                    break;
+                default:
+                    else printf("%s: unsupported data type: %d\n", driverName, pArray->dataType);
+                break;
+            }
         }
         else printf("%s: NOT masking channel %d\n", driverName, channelIndex+1);
+    }
+}
+
+/**
+ * @brief Set all of the values for a channel to zero
+ * 
+ * @tparam epicsType Underlying type of array data
+ * @param pArray Pointer to NDArray
+ * @param channelIndex Channel index of the channel (0-indexed i.e. channel number-1)
+ */
+template <typename epicsType>
+void XspressChannelMaskPlugin::setChannelValuesToZeroT(NDArray *pArray, int channelIndex)
+{
+    epicsType *pData = (epicsType *)pArray->pData;
+    unsigned int channelOffset = pArray->dims[0].size * channelIndex;
+    for (unsigned int i=0; i<pArray->dims[1].size; i++)
+    {
+        *(pData + i + channelOffset) = 0;
     }
 }
 

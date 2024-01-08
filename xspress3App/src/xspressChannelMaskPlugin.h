@@ -49,6 +49,9 @@ protected:
 private:
     void applyMask(NDArray *pArray);
 
+    template <typename epicsType>
+    void setChannelValuesToZeroT(NDArray *pArray, int channelIndex);
+
 };
 
 #endif // XspressChannelMaskPlugin_H
