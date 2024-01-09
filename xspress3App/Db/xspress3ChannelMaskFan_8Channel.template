@@ -16,17 +16,17 @@
 #
 #######################################################
 
-record(bo, "$(P)$(R):USE")
+record(bo, "$(P)$(R)USE")
 {
     field(DESC, "Enable masking")
     field(VAL, "0")
     field(ONAM, "On")
     field(ZNAM, "Off")
     field(PINI, "YES")
-    field(FLNK, "$(P)$(R):USE_FAN.PROC")
+    field(FLNK, "$(P)$(R)USE_FAN.PROC")
 }
 
-record(dfanout, "$(P)$(R):USE_FAN")
+record(dfanout, "$(P)$(R)USE_FAN")
 {
     field(DOL, "$(P)$(R)CH1:ENABLE.VAL")
     field(OMSL, "closed_loop")
