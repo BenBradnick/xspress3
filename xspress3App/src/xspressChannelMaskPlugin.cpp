@@ -182,8 +182,7 @@ void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
     unsigned int yDimension = (unsigned int)pArray->dims[1].size;
     if (numDims < 2)
     {
-        // TODO: replace printf with asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR, "", *args)
-        printf(
+        asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
             "%s: expected at least 2 dimensions, got %u (skipping mask)\n",
             driverName,
             numDims
@@ -192,8 +191,7 @@ void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
     }
     else if (yDimension != channelMasked.size())
     {
-        // TODO: replace printf with asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR, "", *args)
-        printf(
+        asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,
             "%s: expected Y dimension of size %lu, got %u (skipping mask)\n",
             driverName,
             channelMasked.size(),
@@ -239,8 +237,7 @@ void XspressChannelMaskPlugin::applyMask(NDArray *pArray)
                     setChannelValuesToZeroT<epicsFloat64>(pArray, channelIndex);
                     break;
                 default:
-                    // TODO: replace printf with asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR, "", *args)
-                    printf("%s: unsupported data type: %d\n", driverName, pArray->dataType);
+                    asynPrint(this->pasynUserSelf, ASYN_TRACE_ERROR,"%s: unsupported data type: %d\n", driverName, pArray->dataType);
                     break;
                 break;
             }
