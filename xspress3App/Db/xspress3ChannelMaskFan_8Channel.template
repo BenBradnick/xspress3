@@ -30,8 +30,8 @@ record(dfanout, "$(P)$(R)USE_FAN")
 {
     field(DOL, "$(P)$(R)CH1:ENABLE.VAL")
     field(OMSL, "closed_loop")
-    field(OUTA, "$(P)$(R1):USE PP")
-    field(OUTB, "$(P)$(R2):USE PP")
+    field(OUTA, "$(P)$(R1)USE PP")
+    field(OUTB, "$(P)$(R2)USE PP")
 }
 
 record(bo, "$(P)$(R)CH1:ENABLE")
