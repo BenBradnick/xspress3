@@ -1901,7 +1901,7 @@ text {
 		height=20
 	}
 	control {
-		chan="$(P):PROC1:ResetFilter"
+		chan="$(P):Proc1:ResetFilter"
 		clr=14
 		bclr=51
 	}
