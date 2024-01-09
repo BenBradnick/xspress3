@@ -2,19 +2,20 @@ TOP=../..
 
 include $(TOP)/configure/CONFIG
 
-# -------------------------------
-# Build an Diamond Support Module
-# -------------------------------
+# --------------------------------
+# Build the support module library
+# --------------------------------
 
 DATA+=xsp3.xml
 
 ifeq (Linux, $(OS_CLASS))
-ifeq (x86_64, $(ARCH_CLASS))
-  LIBRARY_IOC_Linux += xspress3Epics
-endif
+  ifeq (x86_64, $(ARCH_CLASS))
+    LIBRARY_IOC_Linux += xspress3Epics
+  endif
 endif
 
 DBD += xspress3Support.dbd
+DBD += xspressChannelMaskPlugin.dbd
 
 
 # The following are compiled and added to the support library
@@ -24,7 +25,7 @@ xspress3Epics_SRCS += xsp3Detector.cpp
 xspress3Epics_SRCS += xsp3Simulator.cpp
 xspress3Epics_SRCS += xsp3SimElement.cpp
 xspress3Epics_SRCS += xsp3TimeRegister.cpp
-
+xspress3Epics_SRCS += xspressChannelMaskPlugin.cpp
 
 
 include $(ADCORE)/ADApp/commonLibraryMakefile

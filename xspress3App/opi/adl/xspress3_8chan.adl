@@ -1,12 +1,12 @@
 
 file {
-	name="/home/xspress3/epics/xspress3/xspress3App/opi/adl/xspress3_8chan.adl"
-	version=030112
+	name="/home/ben/epics/modules/xspress3/xspress3App/opi/adl/xspress3_8chan.adl"
+	version=030118
 }
 display {
 	object {
-		x=400
-		y=250
+		x=2402
+		y=276
 		width=450
 		height=525
 	}
@@ -505,17 +505,17 @@ byte {
 		width=90
 		height=25
 	}
-	display[1] {
+	display[0] {
 		label="AreaDetector Base"
 		name="ADBase.adl"
 		args="P=$(P):, R=det1:"
 	}
-	display[2] {
+	display[1] {
 		label="HDF5 File Plugin"
 		name="NDFileHDF5.adl"
 		args="P=$(P), R=:HDF1:"
 	}
-	display[4] {
+	display[2] {
 		label="PROC1 (For MCA Sums)"
 		name="NDProcess.adl"
 		args="P=$(P):, R=Proc1:"
@@ -870,68 +870,17 @@ menu {
 }
 "related display" {
 	object {
-		x=105
-		y=25
-		width=100
-		height=25
-	}
-	display[6] {
-		label="MCA 1"
-		name="xspress3_mcarois.adl"
-		args="P=$(P), CHAN=1"
-	}
-	display[7] {
-		label="MCA 2"
-		name="xspress3_mcarois.adl"
-		args="P=$(P), CHAN=2"
-	}
-	display[8] {
-		label="MCA 3"
-		name="xspress3_mcarois.adl"
-		args="P=$(P), CHAN=3"
-	}
-	display[9] {
-		label="MCA 4"
-		name="xspress3_mcarois.adl"
-		args="P=$(P), CHAN=4"
-	}
-	display[10] {
-		label="MCA 5"
-		name="xspress3_mcarois.adl"
-		args="P=$(P), CHAN=5"
-	}
-	display[11] {
-		label="MCA 6"
-		name="xspress3_mcarois.adl"
-		args="P=$(P), CHAN=6"
-	}
-	display[12] {
-		label="MCA 7"
-		name="xspress3_mcarois.adl"
-		args="P=$(P), CHAN=7"
-	}
-	display[13] {
-		label="MCA 8"
-		name="xspress3_mcarois.adl"
-		args="P=$(P), CHAN=8"
-	}
-	clr=54
-	bclr=55
-	label="-MCAs 1-8"
-}
-"related display" {
-	object {
 		x=325
 		y=25
 		width=125
 		height=25
 	}
-	display[1] {
+	display[0] {
 		label="Single MCA Plots [ME7]"
 		name="xspress3_8mcas.adl"
 		args="P=$(P), R=MCA"
 	}
-	display[2] {
+	display[1] {
 		label="Summed MCA Plots [ME7]"
 		name="xspress3_8mcas.adl"
 		args="P=$(P), R=MCASUM"
@@ -965,4 +914,71 @@ text {
 		bclr=3
 	}
 	stacking="column"
+}
+"related display" {
+	object {
+		x=105
+		y=25
+		width=100
+		height=25
+	}
+	display[0] {
+		label="MCA 1"
+		name="xspress3_mcarois.adl"
+		args="P=$(P), CHAN=1"
+	}
+	display[1] {
+		label="MCA 2"
+		name="xspress3_mcarois.adl"
+		args="P=$(P), CHAN=2"
+	}
+	display[2] {
+		label="MCA 3"
+		name="xspress3_mcarois.adl"
+		args="P=$(P), CHAN=3"
+	}
+	display[3] {
+		label="MCA 4"
+		name="xspress3_mcarois.adl"
+		args="P=$(P), CHAN=4"
+	}
+	display[4] {
+		label="MCA 5"
+		name="xspress3_mcarois.adl"
+		args="P=$(P), CHAN=5"
+	}
+	display[5] {
+		label="MCA 6"
+		name="xspress3_mcarois.adl"
+		args="P=$(P), CHAN=6"
+	}
+	display[6] {
+		label="MCA 7"
+		name="xspress3_mcarois.adl"
+		args="P=$(P), CHAN=7"
+	}
+	display[7] {
+		label="MCA 8"
+		name="xspress3_mcarois.adl"
+		args="P=$(P), CHAN=8"
+	}
+	clr=54
+	bclr=55
+	label="-MCAs 1-8"
+}
+"related display" {
+	object {
+		x=215
+		y=25
+		width=100
+		height=25
+	}
+	display[0] {
+		label="MCA 1"
+		name="xspress3_mcasumrois.adl"
+		args="P=$(P), CHAN=ALL"
+	}
+	clr=54
+	bclr=55
+	label="-MCA SUM"
 }

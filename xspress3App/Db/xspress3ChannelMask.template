@@ -1,0 +1,44 @@
+#######################################################
+# Channel mask plugin template
+# Ben Bradnick
+# December 2023
+#
+# The main template for the Channel Mask plugin to
+# control whether the masking process is enabled or
+# disabled.
+#
+# The records to mask specific channels is are
+# located in the template with _NChannel appended
+# in the name.
+#
+# Macros:
+# % macro,  P,            Device prefix
+# % macro,  R,            Device suffix
+# % macro,  PORT,         Asyn port name
+# % macro,  ADDR,         Asyn address (set to zero)
+# % macro,  NDARRAY_PORT  Asyn port of upstream plugin/driver
+# % macro,  TIMEOUT,      Asyn timeout
+#
+#######################################################
+
+include "NDPluginBase.template"
+
+record(bo, "$(P)$(R)USE")
+{
+   field(DESC, "Enable channel masking")
+   field(DTYP, "asynInt32")
+   field(OUT,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))USE")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+   field(VAL,  "0")
+}
+
+record(bi, "$(P)$(R)USE_RBV")
+{
+   field(DESC, "Enable channel masking")
+   field(DTYP, "asynInt32")
+   field(INP,  "@asyn($(PORT),$(ADDR=0),$(TIMEOUT=1))USE")
+   field(SCAN, "I/O Intr")
+   field(ZNAM, "Off")
+   field(ONAM, "On")
+}

@@ -872,7 +872,7 @@ menu {
 		width=60
 		height=25
 	}
-	display[1] {
+	display[0] {
 		label="MCA 1"
 		name="xspress3_mcarois.adl"
 		args="P=$(P), CHAN=1"

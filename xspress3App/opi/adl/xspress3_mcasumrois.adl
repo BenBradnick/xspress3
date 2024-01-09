@@ -1,0 +1,1910 @@
+
+file {
+	name="/home/ben/epics/modules/xspress3/xspress3App/opi/adl/xspress3_mcasumrois.adl"
+	version=030118
+}
+display {
+	object {
+		x=2491
+		y=121
+		width=835
+		height=850
+	}
+	clr=1
+	bclr=1
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=1
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+text {
+	object {
+		x=230
+		y=5
+		width=380
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Xspress3 $(P) Summed channels MCA data"
+	align="horiz. centered"
+}
+"cartesian plot" {
+	object {
+		x=70
+		y=25
+		width=700
+		height=280
+	}
+	plotcom {
+		title="Summed Frames"
+		clr=14
+		bclr=0
+	}
+	style="line"
+	trace[0] {
+		ydata="$(P):MCASUM$(CHAN):ArrayData"
+		data_clr=14
+		yaxis=0
+		yside=0
+	}
+	x_axis {
+		rangeStyle="user-specified"
+		maxRange=4096.000000
+	}
+	y1_axis {
+		rangeStyle="auto-scale"
+	}
+}
+"cartesian plot" {
+	object {
+		x=70
+		y=310
+		width=700
+		height=280
+	}
+	plotcom {
+		title="Last Frame"
+		clr=14
+		bclr=0
+	}
+	style="line"
+	trace[0] {
+		ydata="$(P):MCA$(CHAN):ArrayData"
+		data_clr=14
+		yaxis=0
+		yside=0
+	}
+	x_axis {
+		rangeStyle="user-specified"
+		maxRange=4096.000000
+	}
+	y1_axis {
+		rangeStyle="auto-scale"
+	}
+}
+text {
+	object {
+		x=10
+		y=620
+		width=190
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Channels enabled"
+}
+"choice button" {
+	object {
+		x=35
+		y=640
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH1:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+text {
+	object {
+		x=10
+		y=643
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="1"
+	align="horiz. right"
+}
+text {
+	object {
+		x=10
+		y=668
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="2"
+	align="horiz. right"
+}
+text {
+	object {
+		x=10
+		y=693
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="3"
+	align="horiz. right"
+}
+text {
+	object {
+		x=10
+		y=718
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="4"
+	align="horiz. right"
+}
+text {
+	object {
+		x=10
+		y=743
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="5"
+	align="horiz. right"
+}
+text {
+	object {
+		x=10
+		y=768
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="6"
+	align="horiz. right"
+}
+text {
+	object {
+		x=10
+		y=793
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="7"
+	align="horiz. right"
+}
+text {
+	object {
+		x=10
+		y=818
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="8"
+	align="horiz. right"
+}
+text {
+	object {
+		x=175
+		y=643
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="9"
+	align="horiz. right"
+}
+text {
+	object {
+		x=175
+		y=668
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="10"
+	align="horiz. right"
+}
+text {
+	object {
+		x=175
+		y=693
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="11"
+	align="horiz. right"
+}
+text {
+	object {
+		x=175
+		y=718
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="12"
+	align="horiz. right"
+}
+text {
+	object {
+		x=175
+		y=743
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="13"
+	align="horiz. right"
+}
+text {
+	object {
+		x=175
+		y=768
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="14"
+	align="horiz. right"
+}
+text {
+	object {
+		x=175
+		y=793
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="15"
+	align="horiz. right"
+}
+text {
+	object {
+		x=175
+		y=818
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="16"
+	align="horiz. right"
+}
+text {
+	object {
+		x=340
+		y=643
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="17"
+	align="horiz. right"
+}
+text {
+	object {
+		x=340
+		y=668
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="18"
+	align="horiz. right"
+}
+text {
+	object {
+		x=340
+		y=693
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="19"
+	align="horiz. right"
+}
+text {
+	object {
+		x=340
+		y=718
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="20"
+	align="horiz. right"
+}
+text {
+	object {
+		x=340
+		y=743
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="21"
+	align="horiz. right"
+}
+text {
+	object {
+		x=340
+		y=768
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="22"
+	align="horiz. right"
+}
+text {
+	object {
+		x=340
+		y=793
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="23"
+	align="horiz. right"
+}
+text {
+	object {
+		x=340
+		y=818
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="24"
+	align="horiz. right"
+}
+text {
+	object {
+		x=500
+		y=643
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="25"
+	align="horiz. right"
+}
+text {
+	object {
+		x=500
+		y=668
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="26"
+	align="horiz. right"
+}
+text {
+	object {
+		x=500
+		y=693
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="27"
+	align="horiz. right"
+}
+text {
+	object {
+		x=500
+		y=718
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="28"
+	align="horiz. right"
+}
+text {
+	object {
+		x=500
+		y=743
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="29"
+	align="horiz. right"
+}
+text {
+	object {
+		x=500
+		y=768
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="30"
+	align="horiz. right"
+}
+text {
+	object {
+		x=500
+		y=793
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="31"
+	align="horiz. right"
+}
+text {
+	object {
+		x=500
+		y=818
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="32"
+	align="horiz. right"
+}
+"related display" {
+	object {
+		x=585
+		y=595
+		width=175
+		height=20
+	}
+	display[0] {
+		name="xspress3_chan_sum_plugins.adl"
+		args="P=$(P):, R=$(CHAN)"
+	}
+	clr=14
+	bclr=55
+	label="-Downstream plugins"
+}
+byte {
+	object {
+		x=145
+		y=640
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH1:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+text {
+	object {
+		x=660
+		y=643
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="33"
+	align="horiz. right"
+}
+text {
+	object {
+		x=660
+		y=668
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="34"
+	align="horiz. right"
+}
+text {
+	object {
+		x=660
+		y=693
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="35"
+	align="horiz. right"
+}
+text {
+	object {
+		x=660
+		y=718
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="36"
+	align="horiz. right"
+}
+text {
+	object {
+		x=660
+		y=743
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="37"
+	align="horiz. right"
+}
+text {
+	object {
+		x=660
+		y=768
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="38"
+	align="horiz. right"
+}
+text {
+	object {
+		x=660
+		y=793
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="39"
+	align="horiz. right"
+}
+text {
+	object {
+		x=660
+		y=818
+		width=15
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="40"
+	align="horiz. right"
+}
+"choice button" {
+	object {
+		x=35
+		y=665
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH2:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=145
+		y=665
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH2:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=35
+		y=690
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH3:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=145
+		y=690
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH3:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=35
+		y=715
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH4:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=145
+		y=715
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH4:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=35
+		y=740
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH5:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=145
+		y=740
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH5:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=35
+		y=765
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH6:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=145
+		y=765
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH6:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=35
+		y=790
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH7:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=145
+		y=790
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH7:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=35
+		y=815
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH8:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=145
+		y=815
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH8:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=200
+		y=640
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH9:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=310
+		y=640
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH9:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=200
+		y=665
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH10:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=310
+		y=665
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH10:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=200
+		y=690
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH11:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=310
+		y=690
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH11:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=200
+		y=715
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH12:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=310
+		y=715
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH12:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=200
+		y=740
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH13:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=310
+		y=740
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH13:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=200
+		y=765
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH14:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=310
+		y=765
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH14:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=200
+		y=790
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH15:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=310
+		y=790
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH15:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=200
+		y=815
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH16:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=310
+		y=815
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH16:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=360
+		y=640
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH17:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=470
+		y=640
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH17:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=360
+		y=665
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH18:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=470
+		y=665
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH18:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=360
+		y=690
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH19:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=470
+		y=690
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH19:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=360
+		y=715
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH20:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=470
+		y=715
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH20:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=360
+		y=740
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH21:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=470
+		y=740
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH21:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=360
+		y=765
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH22:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=470
+		y=765
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH22:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=360
+		y=790
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH23:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=470
+		y=790
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH23:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=360
+		y=815
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH24:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=470
+		y=815
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH24:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=525
+		y=640
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH25:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=635
+		y=640
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH25:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=525
+		y=665
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH26:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=635
+		y=665
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH26:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=525
+		y=690
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH27:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=635
+		y=690
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH27:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=525
+		y=715
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH28:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=635
+		y=715
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH28:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=525
+		y=740
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH29:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=635
+		y=740
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH29:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=525
+		y=765
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH30:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=635
+		y=765
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH30:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=525
+		y=790
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH31:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=635
+		y=790
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH31:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=525
+		y=815
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH32:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=635
+		y=815
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH32:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=685
+		y=640
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH33:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=795
+		y=640
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH33:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=685
+		y=665
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH34:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=795
+		y=665
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH34:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=685
+		y=690
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH35:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=795
+		y=690
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH35:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=685
+		y=715
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH36:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=795
+		y=715
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH36:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=685
+		y=740
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH37:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=795
+		y=740
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH37:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=685
+		y=765
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH38:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=795
+		y=765
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH38:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=685
+		y=790
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH39:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=795
+		y=790
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH39:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=685
+		y=815
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:CH40:ENABLE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=795
+		y=815
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:CH40:ENABLE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"choice button" {
+	object {
+		x=170
+		y=595
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P):MASK:FAN:USE"
+		clr=14
+		bclr=3
+	}
+	stacking="column"
+}
+byte {
+	object {
+		x=280
+		y=595
+		width=20
+		height=20
+	}
+	monitor {
+		chan="$(P):MASK:FAN:USE"
+		clr=60
+		bclr=19
+	}
+	sbit=0
+}
+"related display" {
+	object {
+		x=310
+		y=595
+		width=120
+		height=20
+	}
+	display[0] {
+		label="Plugin base"
+		name="NDPluginBase.adl"
+		args="P=$(P):,R=MASKSUM:"
+	}
+	clr=14
+	bclr=55
+	label="-Single mask plugin"
+}
+text {
+	object {
+		x=75
+		y=598
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Enable masking"
+}
+"related display" {
+	object {
+		x=440
+		y=595
+		width=120
+		height=20
+	}
+	display[0] {
+		label="Plugin base"
+		name="NDPluginBase.adl"
+		args="P=$(P):,R=MASK:"
+	}
+	clr=14
+	bclr=55
+	label="-Summed mask plugin"
+}
+"message button" {
+	object {
+		x=775
+		y=285
+		width=50
+		height=20
+	}
+	control {
+		chan="$(P):Proc1:ResetFilter"
+		clr=14
+		bclr=51
+	}
+	label="Reset"
+	press_msg="1"
+}

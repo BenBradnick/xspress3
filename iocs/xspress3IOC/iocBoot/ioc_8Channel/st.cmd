@@ -69,6 +69,9 @@ epicsEnvSet("CHAN",   "8")
 epicsEnvSet("CHM1",   "7")
 < ../common/DefineSCAROI.cmd
 
+# Set of plugins for summing across selected channels
+< ../common/DefineChannelSum.cmd
+
 ###############################
 
 dbLoadRecords("xspress3Deadtime_8Channel.template",   "P=$(PREFIX)")
@@ -130,6 +133,9 @@ epicsEnvSet("CHM1",   "6")
 epicsEnvSet("CHAN",   "8")
 epicsEnvSet("CHM1",   "7")
 < ../common/SetChannelValues.cmd
+
+# Set of plugins for summing across selected channels
+< ../common/SetChannelSumValues.cmd
 
 ###############################
 
