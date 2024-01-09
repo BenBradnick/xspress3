@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=2412
-		y=284
+		x=2402
+		y=276
 		width=450
 		height=525
 	}
@@ -505,17 +505,17 @@ byte {
 		width=90
 		height=25
 	}
-	display[1] {
+	display[0] {
 		label="AreaDetector Base"
 		name="ADBase.adl"
 		args="P=$(P):, R=det1:"
 	}
-	display[2] {
+	display[1] {
 		label="HDF5 File Plugin"
 		name="NDFileHDF5.adl"
 		args="P=$(P), R=:HDF1:"
 	}
-	display[4] {
+	display[2] {
 		label="PROC1 (For MCA Sums)"
 		name="NDProcess.adl"
 		args="P=$(P):, R=Proc1:"
@@ -875,12 +875,12 @@ menu {
 		width=125
 		height=25
 	}
-	display[1] {
+	display[0] {
 		label="Single MCA Plots [ME7]"
 		name="xspress3_8mcas.adl"
 		args="P=$(P), R=MCA"
 	}
-	display[2] {
+	display[1] {
 		label="Summed MCA Plots [ME7]"
 		name="xspress3_8mcas.adl"
 		args="P=$(P), R=MCASUM"
