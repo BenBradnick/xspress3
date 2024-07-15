@@ -1,0 +1,12 @@
+EPICS_BASE=/odin/epics/epics-base
+SUPPORT=/odin/epics/support
+
+# Used for ADOdin and restClient
+AREA_DETECTOR=$(SUPPORT)/areaDetector-R3-12-1
+ADCORE=$(SUPPORT)/areaDetector-R3-12-1/ADCore
+ASYN=$(SUPPORT)/asyn-R4-44-2
+CALC=$(SUPPORT)/calc-R3-7-5
+
+# Used for procServControl
+BUSY=$(SUPPORT)/busy-R1-7-4
+SNCSEQ=$(SUPPORT)/sequencer-mirror-R2-2-9
