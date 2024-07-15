@@ -11,3 +11,6 @@ CALC=$(SUPPORT)/calc-R3-7-5
 # Used for procServControl
 BUSY=$(SUPPORT)/busy-R1-7-4
 SNCSEQ=$(SUPPORT)/sequencer-mirror-R2-2-9
+
+# This module
+XSPRESS3=/home/xspress3/development/xspress3
