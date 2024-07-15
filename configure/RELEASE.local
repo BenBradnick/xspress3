@@ -4,6 +4,7 @@ SUPPORT=/odin/epics/support
 # Used for ADOdin and restClient
 AREA_DETECTOR=$(SUPPORT)/areaDetector-R3-12-1
 ADCORE=$(SUPPORT)/areaDetector-R3-12-1/ADCore
+ADSUPPORT=$(SUPPORT)/areaDetector-R3-12-1/ADSupport
 ASYN=$(SUPPORT)/asyn-R4-44-2
 CALC=$(SUPPORT)/calc-R3-7-5
 
