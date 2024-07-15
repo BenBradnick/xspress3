@@ -9,7 +9,7 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 #INSTALL_LOCATION_APP=<fullpathname>
 
 # This module
-XSPRESS3=$(SUPPORT)/xspress3
+XSPRESS3=/home/xspress3/development/xspress3
 
 BUILD_IOCS=YES
 
