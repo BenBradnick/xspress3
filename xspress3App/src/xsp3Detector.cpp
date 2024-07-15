@@ -18,7 +18,7 @@ int xsp3Detector::xsp3Api_clocks_setup(int path, int card, int clk_src, int flag
 int xsp3Detector::xsp3Api_close(int path)
 {
     int status;
-    status = xsp3_close( path );
+    status = xsp3_close( path, Xsp3Unlink::Xsp3UnlinkNone );
     return status;
 }
 
